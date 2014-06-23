@@ -41,6 +41,6 @@ class Admin::ArticlesController < AdminController
   end
 
   def article_params
-    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, :twitter_shared_count, :facebook_shared_count, :shared_count, :deleted_at, images_attributes: [:id, :file, :remove_file, :file_cache, :_destroy], videos_attributes: [:id, :url])
+    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, images_attributes: [:id, :file, :remove_file, :file_cache, :_destroy], videos_attributes: [:id, :url])
   end
 end
