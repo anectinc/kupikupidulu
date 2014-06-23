@@ -1,0 +1,50 @@
+# Ignore schema.rb
+/db/schema.rb
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore database.yml
+/config/database.yml
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore all bundle gems
+/vendor/bundle/
+/vendor/cache/
+
+# Ignore Eclipse project
+.project
+
+# Ignore action cache
+/public/*.json
+
+# Ignore jasmine-headless-webkit cache
+/.jhw-cache
+
+# Ignore asset cache
+/public/assets
+
+# Ignore uploaded images
+/public/uploads/
+
+# Ignore .ruby-version
+.ruby-version
+
+# Ignore .DS_Store
+.DS_Store
+
+# Ignore swap file
+*.swp
+
+# Ignore .dropbox
+.dropbox
+
+# Ignore "Icon\r"
+Icon^M^M
