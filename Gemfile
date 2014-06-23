@@ -51,6 +51,8 @@ gem "simple_form", "~> 3.1.0.rc1"
 gem "paranoia", "2.0.1"
 gem "bootstrap-sass", "~> 3.1.1"
 gem "sorcery", "~> 0.8.5"
+gem 'nested_form'
+
 group :development do
   gem "thin"
   gem "better_errors"

@@ -146,6 +146,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.16)
+    nested_form (0.3.2)
     oauth (0.4.7)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
@@ -313,6 +314,7 @@ DEPENDENCIES
   kaminari (~> 0.15.1)
   mini_magick (~> 3.7.0)
   mysql2
+  nested_form
   paranoia (= 2.0.1)
   polyamorous!
   pry-byebug
