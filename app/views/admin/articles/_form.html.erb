@@ -1,20 +1,17 @@
-<%= simple_form_for(@article) do |f| %>
+<%= simple_form_for [:admin, @article] do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :category %>
+  <div class="form-group">
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :source_name %>
     <%= f.input :source_url %>
     <%= f.input :poster_name %>
-    <%= f.input :twitter_shared_count %>
-    <%= f.input :facebook_shared_count %>
-    <%= f.input :shared_count %>
-    <%= f.input :deleted_at %>
+    <%= f.association :category %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= link_to 'Cancel', admin_articles_path, class: 'btn btn-default' %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>
