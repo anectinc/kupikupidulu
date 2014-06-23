@@ -1,0 +1,8 @@
+<div class="row">
+  <% @articles.each do |article| %>
+    <h3 class="title"><%= article.title %></h3>
+    <p><%= article.created_at %></p>
+    <p><%= article.thumbnail_tag %></p>
+    <%= article.description %>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<h1>Listing articles</h1>
+
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Twitter shared count</th>
+      <th>Facebook shared count</th>
+      <th>Shared count</th>
+      <th>Category</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.twitter_shared_count %></td>
+        <td><%= article.facebook_shared_count %></td>
+        <td><%= article.shared_count %></td>
+        <td><%= article.category.name %></td>
+        <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
+        <td><%= link_to 'Destroy', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_admin_article_path %>

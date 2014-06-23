@@ -1,0 +1,15 @@
+<%= simple_form_for(@medium) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :article %>
+    <%= f.input :file %>
+    <%= f.input :file_tmp %>
+    <%= f.input :url %>
+    <%= f.input :type %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
