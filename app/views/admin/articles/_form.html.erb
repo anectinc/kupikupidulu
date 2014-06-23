@@ -1,8 +1,27 @@
-<%= simple_form_for [:admin, @article] do |f| %>
+<%= simple_nested_form_for [:admin, @article] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-group">
     <%= f.input :title %>
+
+    <div id="media">
+    <%= f.simple_fields_for :images do |image_form| %>
+      <%- image = image_form.object -%>
+      <%= image_tag image.file_url(:thumb).to_s if image && image.file? %>
+      <%= image_form.input :file %>
+      <%- if image && image.file? -%>
+        <%= image_form.hidden_field :file_cache if image.file_cache %>
+      <%- end -%>
+      <%= image_form.link_to_remove 'Remove this' %>
+    <% end %>
+    <%= f.simple_fields_for :videos do |video_form| %>
+      <%= video_form.input :url %>
+      <%= video_form.link_to_remove 'Remove this' %>
+    <% end %>
+	</div>
+    <%= f.link_to_add 'Add Image', :images, data: { target: "#media" }, class: 'btn btn-default' %>
+    <%= f.link_to_add 'Add Video', :videos, data: { target: "#media" }, class: 'btn btn-default' %>
+
     <%= f.input :description %>
     <%= f.input :source_name %>
     <%= f.input :source_url %>
