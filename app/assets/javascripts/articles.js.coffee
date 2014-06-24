@@ -1,3 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$('#media').on 'nested:fieldAdded', (event) ->
+  type_field = undefined
+  type_field = event.field.find('.type')
+  type_field.val $(event.link).data('predefined-type')

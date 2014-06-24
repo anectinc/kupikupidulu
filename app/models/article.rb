@@ -8,8 +8,7 @@ class Article < ActiveRecord::Base
   has_many :videos
 
   validates :title, :category_id, presence: true
-  accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
-  accepts_nested_attributes_for :videos, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :media, allow_destroy: true, reject_if: :all_blank
   validates_format_of :source_url, with: /\Ahttps?:\/\/.+\z/
   validate :validate_number_of_media
 
