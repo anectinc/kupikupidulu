@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def main
     @articles = Article.public
-    @popular_articles = Article.public.limit(10)
+    @popular_articles = Article.by_popularity.limit(10)
   end
 
   def contact

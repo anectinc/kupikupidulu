@@ -4,7 +4,7 @@ class CreateMedia < ActiveRecord::Migration
       t.references :article, index: true
       t.string :file
       t.string :file_tmp
-      t.string :url
+      t.string :video_code
       t.string :type
 
       t.timestamps

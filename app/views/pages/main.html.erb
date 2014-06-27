@@ -1,10 +1,11 @@
 <div class="row">
   <% @articles.each do |article| %>
     <div class="tile one-post">
-      <h5 class="title"><%= article.title %></h1>
+      <h5 class="title"><%= link_to article.title, article %></h1>
       <p><%= article.created_at %></p>
       <p><%= article.thumbnail_tag %></p>
       <%= article.description %>
+      <%= link_to 'kasi habis baca >', article %>
     </div>
   <% end %>
 </div>
