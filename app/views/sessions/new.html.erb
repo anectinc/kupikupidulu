@@ -1,6 +1,6 @@
 <%= form_tag sessions_path, class: 'form-signin', role: 'form', method: :post do %>
   <h2 class="form-signin-heading">Please sign in</h2>
-  <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email address' %>
+  <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email address', type: 'email' %>
   <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: 'Pasword' %>
   <%= submit_tag 'Sign in' , class: 'btn btn-lg btn-primary btn-block' %>
 <% end %>
