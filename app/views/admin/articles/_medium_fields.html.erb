@@ -1,12 +1,13 @@
 <%- medium = f.object -%>
 <%= f.input :type, input_html: { class: 'type' }, as: :hidden %>
-<%- if medium && medium.image? -%>
+<%- if (medium && medium.image?) || medium.new_record? -%>
   <%= image_tag medium.file_url(:thumb).to_s if medium && medium.file? %>
-  <%= f.input :file %>
+  <%= f.input :file, as: :file, wrapper_html: { class: 'file' } %>
   <%- if medium && medium.file? -%>
     <%= f.hidden_field :file_cache if medium.file_cache %>
   <%- end -%>
-<%- elsif medium && medium.video? -%>
-  <%= f.input :url %>
+<%- end -%>
+<%- if (medium && medium.video?) || medium.new_record? -%>
+  <%= f.input :url, wrapper_html: { class: 'url' } %>
 <%- end -%>
 <%= f.link_to_remove 'Remove this' %>
