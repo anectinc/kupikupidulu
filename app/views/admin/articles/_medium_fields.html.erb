@@ -1,13 +1,20 @@
-<%- medium = f.object -%>
-<%= f.input :type, input_html: { class: 'type' }, as: :hidden %>
-<%- if (medium && medium.image?) || medium.new_record? -%>
-  <%= image_tag medium.file_url(:thumb).to_s if medium && medium.file? %>
-  <%= f.input :file, as: :file, wrapper_html: { class: 'file' } %>
-  <%- if medium && medium.file? -%>
-    <%= f.hidden_field :file_cache if medium.file_cache %>
-  <%- end -%>
-<%- end -%>
-<%- if (medium && medium.video?) || medium.new_record? -%>
-  <%= f.input :url, wrapper_html: { class: 'url' } %>
-<%- end -%>
-<%= f.link_to_remove 'Remove this' %>
+<div class="row">
+  <%- medium = f.object -%>
+  <%= f.label :type, class: 'hidden_label' %>
+  <div class="col-md-10">
+    <%= f.input :type, input_html: { class: 'type' }, as: :hidden %>
+    <%- if (medium && medium.image?) || medium.new_record? -%>
+      <%= image_tag medium.file_url(:thumb).to_s if medium && medium.file? %>
+      <%= f.input :file, as: :file, label: 'Image', wrapper_html: { class: 'file' } %>
+      <%- if medium && medium.file? -%>
+        <%= f.hidden_field :file_cache if medium.file_cache %>
+      <%- end -%>
+    <%- end -%>
+    <%- if (medium && medium.video?) || medium.new_record? -%>
+      <%= f.input :url, label: 'Video', placeholder: 'paste youtube url here!', wrapper_html: { class: 'url' } %>
+    <%- end -%>
+  </div>
+  <div class="col-md-2">
+    <%= f.link_to_remove 'Delete', class: 'btn btn-sm btn-danger' %>
+  </div>
+</div>
