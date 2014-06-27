@@ -12,6 +12,10 @@ class Article < ActiveRecord::Base
   validates_format_of :source_url, with: /\Ahttps?:\/\/.+\z/, allow_blank: true
   validate :validate_number_of_media
 
+  def source?
+    source_name.present? && source_url.present?
+  end
+
   private
 
   def validate_number_of_media
