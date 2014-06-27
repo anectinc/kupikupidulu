@@ -16,7 +16,6 @@ class Article < ActiveRecord::Base
 
   def validate_number_of_media
     return if Rails.env.test? || !(media.size == 0)
-    pp 'validate_number_of_media'
     errors.add(:media, "は最低1つは指定してください")
   end
 
