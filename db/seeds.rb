@@ -14,14 +14,14 @@ if Rails.env.development?
   User.create name: 'user', email: 'user@doubledown.jp', password: 'secret', password_confirmation: 'secret'
 
   10.times do |i|
-    article = Article.new(title: "image article#{i}", description: "article#{i}'s description", category: Category.all.sample, source_name: "article#{i}'s source name", source_url: 'http://www.youtube.com/watch?v=e8M6S8EKbnU')
+    article = Article.new(title: "image article#{i}", description: "article#{i}'s description", category: Category.all.sample, source_name: "article#{i}'s source name", source_url: 'http://www.youtube.com/watch?v=e8M6S8EKbnU', displayable: true)
     rand(5).times do |j|
-      article.images.build remote_file_url: 'http://placehold.jp/200x200.png'
+      article.media.build type: 'Image', remote_file_url: 'http://placehold.jp/200x200.png'
     end
     article.save
 
-    article = Article.new(title: "video article#{i}", description: "article#{i}'s description", source_name: "article#{i}'s source name", source_url: 'http://www.youtube.com/watch?v=e8M6S8EKbnU')
-    article.videos.build url: 'http://www.youtube.com/embed/e8M6S8EKbnU'
+    article = Article.new(title: "video article#{i}", description: "article#{i}'s description", category: Category.all.sample, source_name: "article#{i}'s source name", source_url: 'http://www.youtube.com/watch?v=e8M6S8EKbnU', displayable: true)
+    article.media.build type: 'Video', url: 'http://www.youtube.com/embed/e8M6S8EKbnU'
     article.save
   end
 end

@@ -1,0 +1,9 @@
+<h2><%= article.title %></h2>
+<%= article.created_at %>
+<% article.media.each do |medium| %>
+  <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
+<% end %>
+<%= article.description %>
+<% if article.source? %>
+  source: <%= article.source %>
+<% end %>

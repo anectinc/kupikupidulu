@@ -1,5 +1,5 @@
 class Admin::ArticlesController < AdminController
-  before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -15,7 +15,7 @@ class Admin::ArticlesController < AdminController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to admin_article_path(@article), notice: 'Article was successfully created.'
     else
       render :new
     end
@@ -41,6 +41,6 @@ class Admin::ArticlesController < AdminController
   end
 
   def article_params
-    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, media_attributes: [:id, :type, :file, :remove_file, :file_cache, :url, :_destroy])
+    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, :displayable, media_attributes: [:id, :type, :file, :remove_file, :file_cache, :url, :_destroy])
   end
 end

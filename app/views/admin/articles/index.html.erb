@@ -17,7 +17,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.title, article %></td>
+        <td><%= link_to article.title, admin_article_path(article) %></td>
         <td><%= article.twitter_shared_count %></td>
         <td><%= article.facebook_shared_count %></td>
         <td><%= article.shared_count %></td>

@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: :show
 
   def index
-    @articles = Article.all
+    @articles = Article.public
   end
 
   def show
@@ -11,6 +11,6 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.public.find(params[:id])
   end
 end

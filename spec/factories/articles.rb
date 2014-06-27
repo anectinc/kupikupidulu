@@ -7,8 +7,7 @@ FactoryGirl.define do
     sequence(:source_name){ |n| "article#{n}'s source name" }
     source_url 'http://www.youtube.com/watch?v=e8M6S8EKbnU'
     sequence(:poster_name){ |n| "poster_name#{n}" }
-    thumbnail_medium_type 'Image'
-    thumbnail_medium_data 'no_image.jpg'
+    displayable true
     twitter_shared_count 1
     facebook_shared_count 1
     shared_count 1
