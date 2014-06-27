@@ -8,18 +8,23 @@ class Article < ActiveRecord::Base
   has_many :videos
 
   validates :title, :category_id, presence: true
-  accepts_nested_attributes_for :media, allow_destroy: true, reject_if: :all_blank
-  validates_format_of :source_url, with: /\Ahttps?:\/\/.+\z/
+  accepts_nested_attributes_for :media, allow_destroy: true, reject_if: proc { |form| self.attr_blank(form) }
+  validates_format_of :source_url, with: /\Ahttps?:\/\/.+\z/, allow_blank: true
   validate :validate_number_of_media
 
   private
 
   def validate_number_of_media
-    return if Rails.env.test? || !(images.size == 0 && videos.size == 0)
+    return if Rails.env.test? || !(media.size == 0)
+    pp 'validate_number_of_media'
     errors.add(:media, "は最低1つは指定してください")
   end
 
   def thumbnail_medium
     media.first
+  end
+
+  def self.attr_blank form
+    form[:type].blank? && form[:file].blank? && form[:url].blank?
   end
 end
