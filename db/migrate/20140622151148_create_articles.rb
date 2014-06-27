@@ -7,6 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :source_name
       t.string :source_url
       t.string :poster_name
+      t.boolean :displayable, null: false, default: false
       t.with_options null: false, default: 0 do |t|
         t.integer :twitter_shared_count
         t.integer :facebook_shared_count

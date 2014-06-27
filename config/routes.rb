@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :contacts, only: :create
 
   namespace :admin do
-    resources :articles, except: :show
+    resources :articles
   end
 
   [:contact].each do |page|
