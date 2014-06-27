@@ -18,6 +18,10 @@ class Article < ActiveRecord::Base
     where displayable: true
   end
 
+  def self.by_popularity
+    order(:id).reverse_order
+  end
+
   def source?
     source_name.present? && source_url.present?
   end
@@ -34,6 +38,6 @@ class Article < ActiveRecord::Base
   end
 
   def self.attr_blank form
-    form[:type].blank? && form[:file].blank? && form[:url].blank?
+    form[:type].blank? && form[:file].blank? && form[:video_code].blank?
   end
 end

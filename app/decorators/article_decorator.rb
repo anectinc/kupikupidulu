@@ -4,7 +4,17 @@ module ArticleDecorator
     if thumbnail_medium.image?
       image_tag(thumbnail_medium.file.url || 'no_image.jpg')
     elsif thumbnail_medium.video?
-      content_tag :iframe, nil, height: height, width: width, src: thumbnail_medium.url, frameborder: 0
+      content_tag :div, class: ['embed-responsive', 'embed-responsive-16by9'] do
+        content_tag :iframe, nil, src: "http://www.youtube.com/embed/#{thumbnail_medium.video_code}", class: 'embed-responsive-item'
+      end
+    end
+  end
+
+  def thumbnail_image_tag
+    if thumbnail_medium.image?
+      image_tag(thumbnail_medium.file.url || 'no_image.jpg')
+    elsif thumbnail_medium.video?
+      image_tag("http://img.youtube.com/vi/#{video_code}/1.jpg")
     end
   end
 

@@ -4,5 +4,5 @@ class Video < Medium
     Medium.model_name
   end
 
-  validates_format_of :url, with: /\Ahttps?:\/\/.+\z/
+  # validates_format_of :url, with: /\Ahttps?:\/\/.+\z/
 end

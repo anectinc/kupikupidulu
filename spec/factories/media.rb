@@ -11,7 +11,7 @@ FactoryGirl.define do
     end
 
     factory :video, class: 'Video' do
-      url 'http://www.youtube.com/embed/e8M6S8EKbnU'
+      video_code 'e8M6S8EKbnU'
       type 'Video'
     end
   end
