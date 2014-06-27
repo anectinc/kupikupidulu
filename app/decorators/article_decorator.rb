@@ -7,4 +7,8 @@ module ArticleDecorator
       content_tag :iframe, nil, height: height, width: width, src: thumbnail_medium.url, frameborder: 0
     end
   end
+
+  def source
+    link_to source_name, source_url
+  end
 end

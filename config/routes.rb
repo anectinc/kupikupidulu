@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
   root 'pages#main'
 
-  resources :media
   resources :articles, only: [:index, :show]
   resources :contacts, only: :create
 
