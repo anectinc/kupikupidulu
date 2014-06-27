@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 
   def validate_number_of_media
     return if Rails.env.test? || !(media.size == 0)
-    errors.add(:media, "は最低1つは指定してください")
+    errors.add(:media, 'は最低1つは指定してください')
   end
 
   def thumbnail_medium
