@@ -12,9 +12,9 @@ module ArticleDecorator
 
   def thumbnail_image_tag
     if thumbnail_medium.image?
-      image_tag(thumbnail_medium.file.url || 'no_image.jpg')
+      image_tag(thumbnail_medium.file.url || 'no_image.jpg', widht: 64, height: 64, class: 'media-object')
     elsif thumbnail_medium.video?
-      image_tag("http://img.youtube.com/vi/#{video_code}/1.jpg")
+      image_tag("http://img.youtube.com/vi/#{thumbnail_medium.video_code}/1.jpg", widht: 64, height: 64, class: 'media-object')
     end
   end
 
