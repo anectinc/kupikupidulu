@@ -10,11 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
 */
+@import "color";
 @import "scaffolds";
 @import "sessions";
+@import "bootstrap";
+@import "flat-ui";
 @import "pages";
 @import "articles";
 @import "media";
-@import "bootstrap";
-@import "flat-ui";
 @import "style";
