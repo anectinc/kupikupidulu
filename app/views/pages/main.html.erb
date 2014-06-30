@@ -3,7 +3,7 @@
     <div class="one-post">
       <h5 class="title"><%= link_to article.title, article %></h1>
       <p class="post-time"><%= article.created_at %></p>
-      <p class="post-image"><%= article.thumbnail_tag %></p>
+      <div class="post-image"><%= article.thumbnail_tag %></div>
       <%= article.description %>
       <%= link_to 'kasi habis baca >', article %>
     </div>
