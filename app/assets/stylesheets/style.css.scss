@@ -1,3 +1,11 @@
+%clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
 body {
   color: $main-font;
   background-color: $background;
@@ -24,6 +32,11 @@ body {
   }
 }
 
+.title {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
 .one-post {
   margin-bottom: 10px;
   padding: 16px;
@@ -35,6 +48,12 @@ body {
 .post-time {
   color: $sub-font;
   font-size: 14px;
+  margin-bottom: 6px;
+  display: inline-block;
+
+  .fui-time {
+    margin-right: 5px;
+  }
 }
 
 .post-image {
@@ -47,10 +66,60 @@ body {
   }
 }
 
+.post-description {
+  margin: 20px 10px;
+}
+
 .ranking {
   padding: 8px 16px;
 }
 
 .ranking-title {
   margin: 4px 0 30px 0;
+}
+
+.share-block {
+  @extend %clearfix;
+  margin: 30px 0 20px;
+
+  .block {
+    float: left;
+    width: 50%;
+  }
+
+  .tw-btn {
+    display: block;
+    background-color: $tw-color;
+    color: $white;
+    font-size: 22px;
+    text-align: center;
+    margin: 0 40px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(#000, .3);
+
+    &:hover {
+      background-color: lighten($tw-color, 8%);
+      box-shadow: 0 3px 10px rgba(#000, .2);
+    }
+  }
+
+  .fb-btn {
+    display: block;
+    background-color: $fb-color;
+    color: $white;
+    font-size: 22px;
+    text-align: center;
+    margin: 0 40px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(#000, .3);
+
+    &:hover {
+      background-color: lighten($fb-color, 10%);
+      box-shadow: 0 3px 10px rgba(#000, .2);
+    }
+  }
 }
