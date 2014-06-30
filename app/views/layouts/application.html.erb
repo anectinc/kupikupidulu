@@ -38,7 +38,7 @@
     <%= favicon_link_tag %>
   </head>
   <body class="<%= controller.controller_name %>">
-    <div class="header-container">
+    <header>
       <div class="container">
         <div class="row">
           <div class="header">
@@ -52,8 +52,8 @@
             </div>
           </div><!-- col -->
         </div><!-- row -->
-      </div><!-- container -->
-    </div>
+      </div>
+    </header>
     <div class="container">
       <div class="row">
         <div class="col-sm-12 flash">
@@ -83,7 +83,7 @@
                   <% end %>
                   <div class="media-body">
                     <h4 class="media-heading"><%= "No.#{no}" %></h4>
-                    <%= article.title %>
+                    <p class="media-title"><%= article.title %></p>
                   </div>
                 </li>
               <% end %>
