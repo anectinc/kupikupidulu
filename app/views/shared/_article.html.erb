@@ -13,10 +13,10 @@
     </p>
     <div class="share-block">
       <div class="block">
-        <a href="https://twitter.com/intent/tweet?text=<%= article.title %> KUPI KUPI DULU url&original_referer=&url=" class="tw-btn">tweet</a>
+        <%= link_to 'tweet', "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{request.original_url}&hashtags=kupikupidulu", class: 'tw-btn' %>
       </div>
       <div class="block">
-        <a href="http://www.facebook.com/sharer.php?u=http://virates.com/entertainment/3427729" class="fb-btn">share</a>
+        <%= link_to 'share', "http://www.facebook.com/sharer.php?u=#{request.original_url}", class: 'fb-btn' %>
       </div>
     </div>
   </article>
