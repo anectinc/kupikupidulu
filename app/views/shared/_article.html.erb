@@ -1,9 +1,23 @@
-<h2><%= article.title %></h2>
-<%= article.created_at %>
-<% article.media.each do |medium| %>
-  <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
-<% end %>
-<%= article.description %>
-<% if article.source? %>
-  source: <%= article.source %>
-<% end %>
+<div class="row">
+  <article class="one-post">
+    <h1 class="title"><%= article.title %></h1>
+    <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
+    <% article.media.each do |medium| %>
+      <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
+    <% end %>
+    <% if article.source? %>
+      source: <%= article.source %>
+    <% end %>
+    <p class="post-description">
+      <%= article.description %>
+    </p>
+    <div class="share-block">
+      <div class="block">
+        <a href="https://twitter.com/intent/tweet?text=<%= article.title %> KUPI KUPI DULU url&original_referer=&url=" class="tw-btn">tweet</a>
+      </div>
+      <div class="block">
+        <a href="http://www.facebook.com/sharer.php?u=http://virates.com/entertainment/3427729" class="fb-btn">share</a>
+      </div>
+    </div>
+  </article>
+</div>
