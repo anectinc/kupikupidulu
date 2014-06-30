@@ -67,7 +67,34 @@ header {
 }
 
 .ranking {
-  padding: 8px 16px;
+  padding: 8px 45px;
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 1px;
+  }
+
+  .media {
+    background-color: #FFF;
+    border: solid 1px #EEE;
+    border-radius: 32px;
+    height: 64px;
+
+    &:hover {
+      box-shadow: 1px 4px 10px rgba(#000, .08);
+    }
+  }
+
+  .media-heading {
+    font-size: 18px;
+    margin: 5px;
+  }
+
+  .media-title {
+    margin: 5px;
+  }
 }
 
 .ranking-title {
