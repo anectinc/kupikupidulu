@@ -54,9 +54,10 @@ header {
 
 .source {
   img {
-    width: 100%;
-    margin: 10px 0;
+    display: block;
+    margin: 15px auto;
     border-radius: 2px;
+    max-width: 100%;
   }
 }
 
