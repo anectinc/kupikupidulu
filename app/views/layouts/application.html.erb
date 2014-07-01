@@ -91,15 +91,15 @@
             <h5 class="ranking-title">★ Palng fames</h5>
             <ul class="media-list">
               <% @popular_articles.each.with_index(1) do |article, no| %>
-                <%= link_to article do %>
-                  <li class="media">
+                <li class="media">
+                  <%= link_to article do %>
                     <div class="pull-left"><%= article.thumbnail_image_tag %></div>
                     <div class="media-body">
                       <h4 class="media-heading"><%= "No.#{no}" %></h4>
                       <p class="media-title"><%= article.title %></p>
                     </div>
-                  </li>
-                <% end %>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           </div>
