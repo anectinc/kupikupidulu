@@ -1,50 +1,34 @@
-# Ignore schema.rb
-/db/schema.rb
-
-# Ignore bundler config.
 /.bundle
-
-# Ignore the default SQLite database.
+/vendor/bundle
 /db/*.sqlite3
-/db/*.sqlite3-journal
-
-# Ignore database.yml
-/config/database.yml
-
-# Ignore all logfiles and tempfiles.
+/db/schema.rb
 /log/*.log
 /tmp
-
-# Ignore all bundle gems
-/vendor/bundle/
-/vendor/cache/
-
-# Ignore Eclipse project
-.project
-
-# Ignore action cache
-/public/*.json
-
-# Ignore jasmine-headless-webkit cache
-/.jhw-cache
-
-# Ignore asset cache
-/public/assets
-
-# Ignore uploaded images
-/public/uploads/
-
-# Ignore .ruby-version
-.ruby-version
-
-# Ignore .DS_Store
 .DS_Store
-
-# Ignore swap file
+/app/assets/images
+/public/assets*
+/public/system
+/public/uploads
+/spec/support/uploads
+/config/database.yml
+newrelic.yml
+.foreman
+.env
+doc/
 *.swp
-
-# Ignore .dropbox
-.dropbox
-
-# Ignore "Icon\r"
-Icon^M^M
+*~
+.project
+.idea
+.secret
+/*.iml
+*.rbc
+capybara-*.html
+.rspec
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+/config/initializers/secret_token.rb
+/config/secrets.yml
+.rvmrc

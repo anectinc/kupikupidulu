@@ -1,4 +1,6 @@
 Rails.application.configure do
+  HOSTNAME = 'staging.kupikupidulu.com'
+  REDIS_HOST = 'localhost:6380'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
