@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.2'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
@@ -52,6 +52,7 @@ gem "paranoia", "2.0.1"
 gem "bootstrap-sass", "~> 3.1.1"
 gem "sorcery", "~> 0.8.5"
 gem 'nested_form'
+gem 'redis'
 
 group :development do
   gem "thin"
