@@ -1,6 +1,6 @@
 Rails.application.configure do
-  HOSTNAME = 'kupikupidulu.com'
-  REDIS_HOST = 'localhost:6379'
+  HOSTNAME = 'http://kupikupidulu.com'
+  REDIS_HOST = 'http://127.0.0.1:6379'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
