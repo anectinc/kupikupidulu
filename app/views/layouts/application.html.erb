@@ -56,6 +56,31 @@
     </header>
     <div class="container">
       <div class="row">
+        <nav class="navbar" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-01">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+                <a href="#">Category1</a>
+              </li>
+              <li>
+                <a href="#">Category1</a>
+              </li>
+              <li>
+                <a href="#">Category1</a>
+              </li>
+              <li>
+                <a href="#">Category1</a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div>
+      <div class="row">
         <a class="banner" href="https://www.facebook.com/patrick.ben1">
           <div class="col-sm-2">
             <%= image_tag 'ben.png' %>
@@ -67,8 +92,6 @@
           </div>
         </a>
       </div>
-    </div>
-    <div class="container">
       <div class="row">
         <div class="col-sm-12 flash">
           <% flash.each do |name, msg| %>
