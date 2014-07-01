@@ -28,6 +28,27 @@ header {
   }
 }
 
+.banner {
+  display: block;
+  padding: 16px 0;
+  background-color: #FFF;
+  border: solid 1px #EEE;
+  border-radius: 2px;
+  margin: 0 10px 10px;
+  @extend %clearfix;
+
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 2px;
+  }
+
+  .message {
+    margin-left: 16px;
+    font-size: 38px;
+  }
+}
+
 blockquote {
   margin: 10px 0;
 }
