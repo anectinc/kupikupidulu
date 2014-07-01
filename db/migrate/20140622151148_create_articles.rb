@@ -9,9 +9,9 @@ class CreateArticles < ActiveRecord::Migration
       t.string :poster_name
       t.boolean :displayable, null: false, default: false
       t.with_options null: false, default: 0 do |t|
-        t.integer :twitter_shared_count
-        t.integer :facebook_shared_count
+        t.integer :tweeted_count
         t.integer :shared_count
+        t.integer :score
       end
       t.datetime :deleted_at, default: nil
 

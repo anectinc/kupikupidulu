@@ -1,5 +1,6 @@
 Rails.application.configure do
   HOSTNAME = 'localhost:3000'
+  REDIS_HOST = 'localhost:6379'
 
   # Settings specified here will take precedence over those in config/application.rb.
 

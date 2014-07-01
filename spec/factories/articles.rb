@@ -8,9 +8,9 @@ FactoryGirl.define do
     source_url 'http://www.youtube.com/watch?v=e8M6S8EKbnU'
     sequence(:poster_name){ |n| "poster_name#{n}" }
     displayable true
-    twitter_shared_count 1
-    facebook_shared_count 1
+    tweeted_count 1
     shared_count 1
+    score 2
     deleted_at nil
   end
 end

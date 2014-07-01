@@ -19,11 +19,21 @@ class Article < ActiveRecord::Base
   end
 
   def self.by_popularity
-    order(:id).reverse_order
+    self.find(REDIS.zrevrange(Date.today.prev_day.to_s, 0, 9)).presence || self.order(:id).reverse_order.limit(10)
   end
 
   def source?
     source_name.present? && source_url.present?
+  end
+
+  def increment_tweeted_count
+    increment! :tweeted_count
+    increment_score
+  end
+
+  def increment_shared_count
+    increment! :shared_count
+    increment_score
   end
 
   private
@@ -39,5 +49,9 @@ class Article < ActiveRecord::Base
 
   def self.attr_blank form
     form[:type].blank? && form[:file].blank? && form[:video_code].blank?
+  end
+
+  def increment_score
+    increment! :score
   end
 end
