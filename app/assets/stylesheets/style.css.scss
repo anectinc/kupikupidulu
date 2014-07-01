@@ -13,8 +13,8 @@ body {
 
 header {
   background-color: $header-background;
-  margin-bottom: 60px;
-  padding: 40px 60px;
+  padding: 20px;
+  margin-bottom: 30px;
 
   h1 a {
     color: #FFF;
@@ -26,6 +26,26 @@ header {
   h6 {
     color: #f9a825;
   }
+}
+
+.navbar {
+  border: solid 1px #EEE;
+  background-color: #FFF;
+  border-radius: 2px;
+  margin: 10px;
+
+  ul li a {
+    color: $main-font;
+    border-radius: 0 !important;
+
+    &:hover {
+      background-color: #EEE;
+    }
+  }
+}
+
+.navbar-toggle:before {
+  color: #95a5a6;
 }
 
 .banner {
@@ -54,7 +74,9 @@ blockquote {
 
 .title {
   font-size: 32px;
-  margin: 10px 0;
+  margin: 0 0 2px 0;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #EEE;
 }
 
 .one-post {
@@ -63,6 +85,23 @@ blockquote {
   background-color: #FFF;
   border: solid 1px #EEE;
   border-radius: 2px;
+}
+
+.read-more {
+  display: inline-block;
+  background-color: #1ABC9C;
+  border-radius: 2px;
+  padding: 6px 15px 6px 20px;
+  color: #FFF;
+
+  &:hover {
+    background-color: lighten($green, 5%);
+  }
+
+  span {
+    margin-left: 5px;
+    color: darken($green, 20%);
+  }
 }
 
 .post-time {
@@ -150,11 +189,9 @@ blockquote {
   height: 50px;
   line-height: 50px;
   border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(#000, .3);
 
   &:hover {
     background-color: lighten($tw-color, 8%);
-    box-shadow: 0 3px 10px rgba(#000, .2);
     color: #FFF;
   }
 }
@@ -169,11 +206,9 @@ blockquote {
   height: 50px;
   line-height: 50px;
   border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(#000, .3);
 
   &:hover {
     background-color: lighten($fb-color, 10%);
-    box-shadow: 0 3px 10px rgba(#000, .2);
     color: #FFF;
   }
 }
