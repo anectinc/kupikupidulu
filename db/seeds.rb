@@ -11,7 +11,7 @@ if Category.all.blank?
   end
 end
 
-if Rails.env.development?
+if Rails.env.development? || Rails.env.staging?
   User.create name: 'user', email: 'user@doubledown.jp', password: 'secret', password_confirmation: 'secret'
 
   10.times do |i|
