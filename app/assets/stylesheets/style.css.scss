@@ -87,7 +87,7 @@ blockquote {
 
 .post-image {
   width: 100%;
-  height: 365px;
+  max-height: 365px;
   overflow: hidden;
 
   img {
@@ -101,7 +101,7 @@ blockquote {
 }
 
 .ranking {
-  padding: 8px 45px;
+  padding: 8px 10px;
 
   img {
     width: 60px;
@@ -129,6 +129,10 @@ blockquote {
   .media-title {
     margin: 5px;
   }
+
+  .media-body {
+    color: $main-font;
+  }
 }
 
 .ranking-title {
@@ -136,49 +140,41 @@ blockquote {
   color: $sub-font;
 }
 
-.share-block {
-  @extend %clearfix;
-  margin: 30px 0 20px;
+.tw-btn {
+  display: block;
+  background-color: $tw-color;
+  color: $white;
+  font-size: 22px;
+  text-align: center;
+  margin: 10px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(#000, .3);
 
-  .block {
-    float: left;
-    width: 50%;
+  &:hover {
+    background-color: lighten($tw-color, 8%);
+    box-shadow: 0 3px 10px rgba(#000, .2);
+    color: #FFF;
   }
+}
 
-  .tw-btn {
-    display: block;
-    background-color: $tw-color;
-    color: $white;
-    font-size: 22px;
-    text-align: center;
-    margin: 0 40px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px rgba(#000, .3);
+.fb-btn {
+  display: block;
+  background-color: $fb-color;
+  color: $white;
+  font-size: 22px;
+  text-align: center;
+  margin: 10px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(#000, .3);
 
-    &:hover {
-      background-color: lighten($tw-color, 8%);
-      box-shadow: 0 3px 10px rgba(#000, .2);
-    }
-  }
-
-  .fb-btn {
-    display: block;
-    background-color: $fb-color;
-    color: $white;
-    font-size: 22px;
-    text-align: center;
-    margin: 0 40px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px rgba(#000, .3);
-
-    &:hover {
-      background-color: lighten($fb-color, 10%);
-      box-shadow: 0 3px 10px rgba(#000, .2);
-    }
+  &:hover {
+    background-color: lighten($fb-color, 10%);
+    box-shadow: 0 3px 10px rgba(#000, .2);
+    color: #FFF;
   }
 }
 
