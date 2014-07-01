@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -7,6 +8,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_popular_articles
-    @popular_articles = Article.by_popularity.limit(10)
+    @popular_articles = Article.by_popularity
   end
 end

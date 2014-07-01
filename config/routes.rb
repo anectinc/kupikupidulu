@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#main'
 
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    get :tweet, on: :member
+    get :share, on: :member
+  end
   resources :contacts, only: :create
 
   namespace :admin do
