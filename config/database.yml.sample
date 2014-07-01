@@ -47,8 +47,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: kupikupidulu_staging
+  socket: /usr/local/mysql/socket/mysql.sock
+
 production:
   <<: *default
   database: kupikupidulu_production
-  username: kupikupidulu
-  password: <%= ENV['KUPIKUPIDULU_DATABASE_PASSWORD'] %>
+  socket: /usr/local/mysql/socket/mysql.sock
