@@ -55,20 +55,6 @@
       </div>
     </header>
     <div class="container">
-      <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions') %>
-        <div class="row">
-          <a class="banner" href="https://www.facebook.com/patrick.ben1">
-            <div class="col-sm-2">
-              <%= image_tag 'ben.png' %>
-            </div>
-            <div class="col-sm-10">
-              <p class="message">
-                kupi kupi dulu 創設者 Ben Patrickからの メッセージをお読みください
-              </p>
-            </div>
-          </a>
-        </div>
-      <% end %>
       <div class="row">
         <div class="col-sm-12 flash">
           <% flash.each do |name, msg| %>
