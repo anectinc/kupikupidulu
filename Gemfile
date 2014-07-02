@@ -53,6 +53,7 @@ gem "sorcery", "~> 0.8.5"
 gem 'nested_form'
 gem 'redis'
 gem 'sitemap_generator'
+gem 'whenever', require: false
 
 group :development do
   gem "thin"
