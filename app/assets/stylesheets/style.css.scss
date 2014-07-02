@@ -75,6 +75,29 @@ header {
   border-radius: 2px;
 }
 
+.pagination {
+  margin: 8px;
+
+  ul {
+    padding: 0 5px;  
+  }
+
+  .active a {
+    background-color: $green !important;
+    border-color: $green !important;
+    color: #FFF !important;
+  }
+
+  li a {
+    color: $green !important;
+    padding: 2px 6px !important;
+
+    &:hover {
+      color: #FFF !important;
+    }
+  }
+}
+
 blockquote {
   margin: 10px 0;
 }
