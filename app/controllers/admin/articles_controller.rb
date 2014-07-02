@@ -23,7 +23,7 @@ class Admin::ArticlesController < AdminController
 
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to admin_articles_path, notice: 'Article was successfully updated.'
     else
       render :edit
     end
@@ -41,6 +41,6 @@ class Admin::ArticlesController < AdminController
   end
 
   def article_params
-    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, :displayable, media_attributes: [:id, :type, :file, :remove_file, :file_cache, :url, :_destroy])
+    params.require(:article).permit(:category_id, :title, :description, :source_name, :source_url, :poster_name, :displayable, media_attributes: [:id, :type, :file, :remove_file, :file_cache, :video_code, :_destroy])
   end
 end

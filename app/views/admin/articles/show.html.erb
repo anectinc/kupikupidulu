@@ -6,7 +6,7 @@
       <div class="form-actions">
         <%= link_to 'Edit', edit_admin_article_path(@article), class: 'btn btn-default' %>
         <%= link_to 'Destroy', admin_article_path(@article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= f.button :submit, class: 'btn btn-primary' unless @article.displayable? %>
+        <%= f.button :submit, 'Publish', class: 'btn btn-primary' unless @article.displayable? %>
       </div>
       <% end %>
   </div> <!-- col -->
