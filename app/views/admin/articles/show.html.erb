@@ -1,9 +1,15 @@
-<%= render partial: 'shared/article', locals: { article: @article } %>
-<%= simple_form_for [:admin, @article] do |f| %>
-  <%= f.input :displayable, input_html: { value: '1' }, as: :hidden %>
-  <div class="form-actions">
-    <%= link_to 'Edit', edit_admin_article_path(@article), class: 'btn btn-sm btn-default' %>
-    <%= link_to 'Destroy', admin_article_path(@article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= f.button :submit, class: 'btn btn-primary' unless @article.displayable? %>
+<div class="row">
+  <div class="col-sm-7">
+    <%= render partial: 'shared/article', locals: { article: @article } %>
+    <%= simple_form_for [:admin, @article] do |f| %>
+      <%= f.input :displayable, input_html: { value: '1' }, as: :hidden %>
+      <div class="form-actions">
+        <%= link_to 'Edit', edit_admin_article_path(@article), class: 'btn btn-default' %>
+        <%= link_to 'Destroy', admin_article_path(@article), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= f.button :submit, class: 'btn btn-primary' unless @article.displayable? %>
+      </div>
+      <% end %>
+  </div> <!-- col -->
+  <div class="col-sm-5">
   </div>
-<% end %>
+</div>
