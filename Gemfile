@@ -52,6 +52,7 @@ gem "bootstrap-sass", "~> 3.1.1"
 gem "sorcery", "~> 0.8.5"
 gem 'nested_form'
 gem 'redis'
+gem 'sitemap_generator'
 
 group :development do
   gem "thin"
