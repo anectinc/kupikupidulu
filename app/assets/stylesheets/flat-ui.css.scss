@@ -3808,7 +3808,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   border-radius: 0 0 6px 6px;
 }
 .todo li {
-  background: #34495e image-url('images/todo/todo.png') 92% center no-repeat;
+  background: #34495e image-url('todo/todo.png') 92% center no-repeat;
   background-size: 20px 20px;
   cursor: pointer;
   font-size: 14px;
@@ -3827,7 +3827,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   padding-bottom: 21px;
 }
 .todo li.todo-done {
-  background: transparent image-url('images/todo/done.png) 92% center no-repeat;
+  background: transparent image-url('todo/done.png') 92% center no-repeat;
   background-size: 20px 20px;
   color: #1abc9c;
 }
