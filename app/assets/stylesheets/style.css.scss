@@ -94,7 +94,7 @@ blockquote {
   padding: 4px 0;
   text-align: center;
   color: #FFF;
-  
+
   &:hover {
     background-color: lighten($green, 5%);
   }
@@ -110,7 +110,7 @@ blockquote {
   font-size: 14px;
   margin: 4px 0 6px;
   display: inline-block;
-  background-color: $sub-font;
+  background-color: rgba(110, 116, 125, 0.66);
   padding: 3px 15px;
   border-radius: 2px;
 
@@ -189,7 +189,7 @@ blockquote {
   color: $white;
   font-size: 22px;
   text-align: center;
-  margin: 10px;
+  margin: 10px 0;
   height: 50px;
   line-height: 50px;
   border-radius: 2px;
@@ -215,7 +215,7 @@ blockquote {
   color: $white;
   font-size: 22px;
   text-align: center;
-  margin: 10px;
+  margin: 10px 0;
   height: 50px;
   line-height: 50px;
   border-radius: 2px;
