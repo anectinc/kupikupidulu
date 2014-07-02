@@ -3,6 +3,7 @@ if Rails.env.development? || Rails.env.staging?
   ActiveRecord::Base.connection.tables.map { |table| Object.const_get(table.classify) rescue nil }.compact.each do |_class|
     ActiveRecord::Base.connection.execute("TRUNCATE #{_class.table_name}")
   end
+  REDIS.flushdb
 end
 
 if Category.all.blank?
