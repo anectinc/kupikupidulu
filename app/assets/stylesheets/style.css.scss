@@ -108,7 +108,7 @@ blockquote {
 .post-time {
   color: #FFF;
   font-size: 14px;
-  margin: 4px 0 6px;
+  margin: 9px 0px 10px;
   display: inline-block;
   background-color: rgba(110, 116, 125, 0.66);
   padding: 3px 15px;
@@ -165,28 +165,30 @@ blockquote {
   }
 
   .media-heading {
-    font-size: 18px;
-    margin: 5px;
+    font-size: 16px;
+    margin: 0;
+    color: $label-font;
   }
 
   .media-title {
-    margin: 5px;
+    margin: 0 5px;
   }
 
   .media-body {
     color: $main-font;
+    padding: 10px;
   }
 }
 
 .ranking-title {
-  margin: 4px 0 30px 0;
+  margin: 10px 0 20px;
   color: $sub-font;
 }
 
 .tw-btn {
   display: block;
   background-color: $tw-color;
-  color: $white;
+  color: #FFF;
   font-size: 22px;
   text-align: center;
   margin: 10px 0;
@@ -212,7 +214,7 @@ blockquote {
 .fb-btn {
   display: block;
   background-color: $fb-color;
-  color: $white;
+  color: #FFF;
   font-size: 22px;
   text-align: center;
   margin: 10px 0;
