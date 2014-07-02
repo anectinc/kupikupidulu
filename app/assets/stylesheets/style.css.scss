@@ -8,7 +8,6 @@
 
 * {
   word-wrap: break-word;
-  max-width: 100%;
 }
 
 body {
@@ -38,6 +37,10 @@ header {
   border: solid 1px $base-border-color;
   background-color: #FFF;
   border-radius: 2px;
+
+  li {
+    display: inline;
+  }
 }
 
 .pagination {
