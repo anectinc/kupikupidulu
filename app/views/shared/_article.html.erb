@@ -18,7 +18,7 @@
     <% if !(/^admin\// =~ params[:controller]) %>
       <div class="row">
         <div class="col-md-6">
-          <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{tweet_article_url(only_path: false)}&hashtags=kupikupidulu", class: 'tw-btn share-btn', data: { :'share-url' => tweet_article_url(article) } do %>
+          <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜#{t('service_name')}&original_referer=#{request.original_url}&hashtags=kupikupidulu", class: 'tw-btn share-btn', data: { :'share-url' => tweet_article_url(article) } do %>
             <%= image_tag 'twitter.png' %><span class="text">share di twitter</span>
           <% end %>
         </div>
