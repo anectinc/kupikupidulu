@@ -17,12 +17,12 @@
     </p>
     <div class="row">
       <div class="col-md-6">
-        <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{tweet_article_url(only_path: false)}&hashtags=kupikupidulu", class: 'tw-btn' do %>
+        <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{tweet_article_url(only_path: false)}&hashtags=kupikupidulu", class: 'tw-btn share-btn', data: { :'share-url' => tweet_article_url(article) } do %>
           <%= image_tag 'twitter.png' %><span class="text">share di twitter</span>
         <% end %>
       </div>
       <div class="col-md-6">
-        <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}", class: 'fb-btn' do %>
+        <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}", class: 'fb-btn share-btn', data: { :'share-url' => share_article_url(article) }  do %>
           <%= image_tag 'facebook.png' %><span class="text">share di facebook</span>
         <% end %>
       </div>
