@@ -33,7 +33,7 @@ header {
 }
 
 .breadcrumb {
-  margin: 8px;
+  margin: 0 8px 8px;
   border: solid 1px $base-border-color;
   background-color: #FFF;
   border-radius: 2px;
@@ -147,6 +147,15 @@ blockquote {
 .ranking {
   padding: 0 8px;
 
+  .ranking-title {
+    border: solid 1px $green;
+    border-radius: 2px;
+    padding: 14px;
+    color: darken($green, 10%);
+    font-weight: normal;
+    margin: 0 0 10px;
+  }
+
   img {
     width: 55px;
     height: 55px;
@@ -200,11 +209,6 @@ blockquote {
       right: 15px;
     }
   }
-}
-
-.ranking-title {
-  margin: 10px 0 20px;
-  color: $sub-font;
 }
 
 .tw-btn {
