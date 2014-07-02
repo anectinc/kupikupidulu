@@ -5,7 +5,6 @@
 /log/*.log
 /tmp
 .DS_Store
-/app/assets/images
 /public/assets*
 /public/system
 /public/uploads
