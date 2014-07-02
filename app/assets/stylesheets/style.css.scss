@@ -19,7 +19,7 @@ header {
   h1 a {
     color: #FFF;
     &:hover {
-      color: #EEE;
+      color: $base-border-color;
     }
   }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .navbar {
-  border: solid 1px #EEE;
+  border: solid 1px $base-border-color;
   background-color: #FFF;
   border-radius: 2px;
   margin: 10px;
@@ -39,7 +39,7 @@ header {
     border-radius: 0 !important;
 
     &:hover {
-      background-color: #EEE;
+      background-color: $base-border-color;
     }
   }
 }
@@ -52,7 +52,7 @@ header {
   display: block;
   padding: 16px 0;
   background-color: #FFF;
-  border: solid 1px #EEE;
+  border: solid 1px $base-border-color;
   border-radius: 2px;
   margin: 0 10px 10px;
   @extend %clearfix;
@@ -70,7 +70,7 @@ header {
 
 .breadcrumb {
   margin: 10px;
-  border: solid 1px #EEE;
+  border: solid 1px $base-border-color;
   background-color: #FFF;
   border-radius: 2px;
 }
@@ -83,14 +83,14 @@ blockquote {
   font-size: 32px;
   margin: 0 0 2px 0;
   padding-bottom: 10px;
-  border-bottom: solid 1px #EEE;
+  border-bottom: solid 1px $base-border-color;
 }
 
 .one-post {
   margin: 0 10px 10px;
   padding: 16px;
   background-color: #FFF;
-  border: solid 1px #EEE;
+  border: solid 1px $base-border-color;
   border-radius: 2px;
 }
 
@@ -162,7 +162,7 @@ blockquote {
 
   .media {
     background-color: #FFF;
-    border: solid 1px #EEE;
+    border: solid 1px $base-border-color;
     border-radius: 32px;
     height: 64px;
 
@@ -245,7 +245,7 @@ blockquote {
 }
 
 footer {
-  border-top: solid 1px #EEE;
+  border-top: solid 1px $base-border-color;
   margin-top: 50px;
   padding: 10px;
   background-color: #FFF;
