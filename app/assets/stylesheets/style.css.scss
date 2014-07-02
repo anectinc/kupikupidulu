@@ -33,46 +33,6 @@ header {
   }
 }
 
-.navbar {
-  border: solid 1px $base-border-color;
-  background-color: #FFF;
-  border-radius: 2px;
-  margin: 10px;
-
-  ul li a {
-    color: $main-font;
-    border-radius: 0 !important;
-
-    &:hover {
-      background-color: $base-border-color;
-    }
-  }
-}
-
-.navbar-toggle:before {
-  color: #95a5a6;
-}
-
-.banner {
-  display: block;
-  padding: 16px 0;
-  background-color: #FFF;
-  border: solid 1px $base-border-color;
-  border-radius: 2px;
-  margin: 0 10px 10px;
-  @extend %clearfix;
-
-  img {
-    width: 100%;
-    border-radius: 2px;
-  }
-
-  .message {
-    margin-left: 16px;
-    font-size: 38px;
-  }
-}
-
 .breadcrumb {
   margin: 8px;
   border: solid 1px $base-border-color;
