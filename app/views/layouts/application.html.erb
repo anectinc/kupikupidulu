@@ -55,7 +55,7 @@
       </div>
     </header>
     <div class="container">
-      <% if !(/^admin\// =~ params[:controller]) %>
+      <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions') %>
         <div class="row">
           <a class="banner" href="https://www.facebook.com/patrick.ben1">
             <div class="col-sm-2">
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="row">
-        <% if !(/^admin\// =~ params[:controller]) %>
+        <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions') %>
           <div class="col-sm-7">
             <%= yield :breadcrumb %>
             <%= yield %>
