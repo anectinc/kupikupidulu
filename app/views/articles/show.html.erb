@@ -1,1 +1,40 @@
+<% content_for :title do %>
+  <%= "#{@article.title} | #{t('service_name')}" %>
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <ul class="breadcrumb">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <%= link_to root_url, itemprop: 'url' do %>
+        <span itemprop="title">Home</span>
+      <% end %>
+    </li>
+    <li class="active">
+      <%= @article.title %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :og_title do %>
+  <meta property="og:title" content="<%= "#{@article.title} | #{t('service_name')}" %>">
+<% end %>
+
+<% if @article.description.present? %>
+  <% content_for :og_description do %>
+    <meta property="og:description" content="<%= "【#{t('service_name')}】#{@article.description}" %>">
+  <% end %>
+
+  <% content_for :meta_description do %>
+    <%= "【#{t('service_name')}】#{@article.description}" %>
+  <% end %>
+<% end %>
+
+<% content_for :og_url do %>
+  <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
+<% content_for :og_image do %>
+  <meta property="og:image" content="<%= asset_path @article.thumbnail_thumb_image_path %>">
+<% end %>
+
 <%= render partial: 'shared/article', locals: { article: @article } %>

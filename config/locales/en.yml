@@ -20,4 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  service_name: 'KUPI KUPI DULU'
+  service_message: '~media gambar sama video yang siok!~'
