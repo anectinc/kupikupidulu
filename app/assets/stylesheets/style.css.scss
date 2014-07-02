@@ -172,6 +172,9 @@ blockquote {
 
   .media-title {
     margin: 0 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .media-body {
