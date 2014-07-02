@@ -190,6 +190,15 @@ blockquote {
   line-height: 50px;
   border-radius: 2px;
 
+  img {
+    height: 25px;
+    margin-top: -2px;
+  }
+
+  .text {
+    margin-left: 10px;
+  }
+
   &:hover {
     background-color: lighten($tw-color, 8%);
     color: #FFF;
@@ -206,6 +215,15 @@ blockquote {
   height: 50px;
   line-height: 50px;
   border-radius: 2px;
+
+  img {
+    height: 25px;
+    margin-top: -4px;
+  }
+
+  .text {
+    margin-left: 10px;
+  }
 
   &:hover {
     background-color: lighten($fb-color, 10%);
