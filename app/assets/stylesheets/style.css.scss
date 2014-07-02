@@ -147,26 +147,27 @@ blockquote {
   padding: 8px 10px;
 
   img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 1px;
+    width: 55px;
+    height: 55px;
+    margin: 4px;
+    border-radius: 2px;
   }
 
   .media {
-    background-color: #FFF;
-    border: solid 1px $base-border-color;
-    border-radius: 32px;
-    height: 64px;
+    border: solid 1px transparent;
+    border-bottom-color: $base-border-color;
+    margin-top: 4px;
 
     &:hover {
-      box-shadow: 1px 4px 10px rgba(#000, .08);
+      border-radius: 2px;
+      background-color: #FFF;
+      border-color: $base-border-color;
     }
   }
 
   .media-heading {
     font-size: 16px;
-    margin: 0;
+    margin: 2px 0;
     color: $label-font;
   }
 
@@ -175,11 +176,19 @@ blockquote {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    padding-right: 30px;
   }
 
   .media-body {
     color: $main-font;
-    padding: 10px;
+    padding: 5px;
+    position: relative;
+
+    .fui-arrow-right {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
   }
 }
 
