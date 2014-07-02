@@ -6,6 +6,11 @@
   }
 }
 
+* {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
 body {
   color: $main-font;
   background-color: $background;
@@ -79,7 +84,7 @@ header {
   margin: 8px;
 
   ul {
-    padding: 0 5px;  
+    padding: 0 5px;
   }
 
   .active a {
