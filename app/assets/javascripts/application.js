@@ -15,3 +15,10 @@
 //= require bootstrap
 //= require jquery_nested_form
 //= require_tree .
+
+(function(){
+  $('body').on('click', '.share-btn', function(url){
+    var url = $(this).attr('data-share-url');
+    $.get(url)
+  });
+})();
