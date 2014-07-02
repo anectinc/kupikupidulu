@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KUPI KUPI DULU</title>
+    <title><%= content_for?(:title) ? yield(:title) : t('service_name') %></title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,user-scalable=no">
     <% if content_for?(:meta_description) || current_page?(root_path) %>
-      <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "KUPI KUPI DULU ~media gambar sama video yang siok!~" %>">
+      <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "#{t('service_name')} #{t('service_message')}" %>">
     <% end %>
     <% if content_for? :og_title %>
       <%= yield :og_title %>
     <% else %>
-      <meta property="og:title" content="KUPI KUPI DULU">
+      <meta property="og:title" content="<%= t('service_name') %>">
     <% end %>
     <% if content_for? :og_description %>
       <%= yield :og_description %>
     <% else %>
-      <meta property="og:description" content="KUPI KUPI DULU ~media gambar sama video yang siok!~">
+      <meta property="og:description" content="<%= "#{t('service_name')} #{t('service_message')}" %>">
     <% end %>
     <% if content_for? :og_url %>
       <%= yield :og_url %>
@@ -44,10 +44,10 @@
           <div class="header">
             <div class="navbar-inner">
               <h1>
-                <%= link_to ' KUPI KUPI DULU ', root_path %>
+                <%= link_to " #{t('service_name')} ", root_path %>
               </h1>
               <h6>
-                ~media gambar sama video yang siok!~
+                <%= t('service_message') %>
               </h6>
             </div>
           </div><!-- col -->
@@ -123,7 +123,7 @@
                 <span class="glyphicon glyphicon-envelope"></span> support
               <% end %>
             </p>
-            <p>Copyright &copy; <%= link_to 'KUPI KUPI DULU', root_path %></p>
+            <p>Copyright &copy; <%= link_to t('service_name'), root_path %></p>
           </div><!-- col -->
         </div><!-- row -->
       </div><!-- container -->

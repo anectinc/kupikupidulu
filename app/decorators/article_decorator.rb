@@ -11,10 +11,22 @@ module ArticleDecorator
   end
 
   def thumbnail_image_tag
+    image_tag(thumbnail_image_path, widht: 64, height: 64, class: 'media-object')
+  end
+
+  def thumbnail_image_path
     if thumbnail_medium.image?
-      image_tag(thumbnail_medium.file.url || 'no_image.jpg', widht: 64, height: 64, class: 'media-object')
+      thumbnail_medium.file.url || 'no_image.jpg'
     elsif thumbnail_medium.video?
-      image_tag("http://img.youtube.com/vi/#{thumbnail_medium.video_code}/1.jpg", widht: 64, height: 64, class: 'media-object')
+      "http://img.youtube.com/vi/#{thumbnail_medium.video_code}/1.jpg"
+    end
+  end
+
+  def thumbnail_thumb_image_path
+    if thumbnail_medium.image?
+      thumbnail_medium.file.thumb.url || 'no_image.jpg'
+    elsif thumbnail_medium.video?
+      "http://img.youtube.com/vi/#{thumbnail_medium.video_code}/1.jpg"
     end
   end
 
