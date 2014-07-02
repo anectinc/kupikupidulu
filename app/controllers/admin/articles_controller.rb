@@ -2,7 +2,7 @@ class Admin::ArticlesController < AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.page(params[:page]).includes(:category)
   end
 
   def new

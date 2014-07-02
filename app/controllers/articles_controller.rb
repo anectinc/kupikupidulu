@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, except: :index
 
   def index
-    @articles = Article.public
+    @articles = Article.public.page(params[:page]).includes(:media)
   end
 
   def show

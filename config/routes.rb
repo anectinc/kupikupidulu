@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'pages#main'
+  root 'articles#index'
 
   resources :articles, only: [:index, :show] do
     get :tweet, on: :member
     get :share, on: :member
+    get 'page/:page', action: :index, on: :collection
   end
   resources :contacts, only: :create
 
