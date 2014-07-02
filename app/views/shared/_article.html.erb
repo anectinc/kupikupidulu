@@ -15,12 +15,16 @@
     <p class="post-description">
       <%= article.description %>
     </p>
-    <div class="share-block">
-      <div class="block">
-        <%= link_to 'tweet', "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{tweet_article_url(only_path: false)}&hashtags=kupikupidulu", class: 'tw-btn' %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{article.title.gsub(/\|/, '｜').gsub(/"/, "'")}｜KUPI KUPI DULU&original_referer=#{tweet_article_url(only_path: false)}&hashtags=kupikupidulu", class: 'tw-btn' do %>
+          <%= image_tag 'twitter.png' %><span class="text">share di twitter</span>
+        <% end %>
       </div>
-      <div class="block">
-        <%= link_to 'share', "http://www.facebook.com/sharer.php?u=#{request.original_url}", class: 'fb-btn' %>
+      <div class="col-md-6">
+        <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}", class: 'fb-btn' do %>
+          <%= image_tag 'facebook.png' %><span class="text">share di facebook</span>
+        <% end %>
       </div>
     </div>
   </article>

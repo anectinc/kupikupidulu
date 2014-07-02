@@ -7,7 +7,16 @@
       <p class="post-description">
         <%= article.description %>
       </p>
-      <div class="text-right"><%= link_to 'kasi habis baca >', article %></div>
+      <div class="row">
+        <div class="col-lg-8"></div>
+        <div class="col-lg-4">
+          <%= link_to article do %>
+            <div class="read-more">
+              kasi habis baca<span class="fui-arrow-right"></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

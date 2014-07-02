@@ -13,8 +13,8 @@ body {
 
 header {
   background-color: $header-background;
-  margin-bottom: 60px;
-  padding: 40px 60px;
+  padding: 20px;
+  margin-bottom: 30px;
 
   h1 a {
     color: #FFF;
@@ -26,6 +26,26 @@ header {
   h6 {
     color: #f9a825;
   }
+}
+
+.navbar {
+  border: solid 1px #EEE;
+  background-color: #FFF;
+  border-radius: 2px;
+  margin: 10px;
+
+  ul li a {
+    color: $main-font;
+    border-radius: 0 !important;
+
+    &:hover {
+      background-color: #EEE;
+    }
+  }
+}
+
+.navbar-toggle:before {
+  color: #95a5a6;
 }
 
 .banner {
@@ -54,7 +74,9 @@ blockquote {
 
 .title {
   font-size: 32px;
-  margin: 10px 0;
+  margin: 0 0 2px 0;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #EEE;
 }
 
 .one-post {
@@ -65,11 +87,32 @@ blockquote {
   border-radius: 2px;
 }
 
+.read-more {
+  display: block;
+  background-color: #1ABC9C;
+  border-radius: 2px;
+  padding: 4px 0;
+  text-align: center;
+  color: #FFF;
+
+  &:hover {
+    background-color: lighten($green, 5%);
+  }
+
+  span {
+    margin-left: 5px;
+    color: darken($green, 20%);
+  }
+}
+
 .post-time {
-  color: $sub-font;
+  color: #FFF;
   font-size: 14px;
-  margin-bottom: 6px;
+  margin: 4px 0 6px;
   display: inline-block;
+  background-color: rgba(110, 116, 125, 0.66);
+  padding: 3px 15px;
+  border-radius: 2px;
 
   .fui-time {
     margin-right: 5px;
@@ -87,7 +130,7 @@ blockquote {
 
 .post-image {
   width: 100%;
-  height: 365px;
+  max-height: 365px;
   overflow: hidden;
 
   img {
@@ -101,7 +144,7 @@ blockquote {
 }
 
 .ranking {
-  padding: 8px 45px;
+  padding: 8px 10px;
 
   img {
     width: 60px;
@@ -129,6 +172,10 @@ blockquote {
   .media-title {
     margin: 5px;
   }
+
+  .media-body {
+    color: $main-font;
+  }
 }
 
 .ranking-title {
@@ -136,49 +183,55 @@ blockquote {
   color: $sub-font;
 }
 
-.share-block {
-  @extend %clearfix;
-  margin: 30px 0 20px;
+.tw-btn {
+  display: block;
+  background-color: $tw-color;
+  color: $white;
+  font-size: 22px;
+  text-align: center;
+  margin: 10px 0;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 2px;
 
-  .block {
-    float: left;
-    width: 50%;
+  img {
+    height: 25px;
+    margin-top: -2px;
   }
 
-  .tw-btn {
-    display: block;
-    background-color: $tw-color;
-    color: $white;
-    font-size: 22px;
-    text-align: center;
-    margin: 0 40px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px rgba(#000, .3);
-
-    &:hover {
-      background-color: lighten($tw-color, 8%);
-      box-shadow: 0 3px 10px rgba(#000, .2);
-    }
+  .text {
+    margin-left: 10px;
   }
 
-  .fb-btn {
-    display: block;
-    background-color: $fb-color;
-    color: $white;
-    font-size: 22px;
-    text-align: center;
-    margin: 0 40px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px rgba(#000, .3);
+  &:hover {
+    background-color: lighten($tw-color, 8%);
+    color: #FFF;
+  }
+}
 
-    &:hover {
-      background-color: lighten($fb-color, 10%);
-      box-shadow: 0 3px 10px rgba(#000, .2);
-    }
+.fb-btn {
+  display: block;
+  background-color: $fb-color;
+  color: $white;
+  font-size: 22px;
+  text-align: center;
+  margin: 10px 0;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 2px;
+
+  img {
+    height: 25px;
+    margin-top: -4px;
+  }
+
+  .text {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background-color: lighten($fb-color, 10%);
+    color: #FFF;
   }
 }
 
