@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Twitter shared count</th>
-      <th>Facebook shared count</th>
+      <th>Tweeted count</th>
       <th>Shared count</th>
+      <th>Score</th>
       <th>Category</th>
       <th colspan="2"></th>
     </tr>
@@ -18,9 +18,9 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, admin_article_path(article) %></td>
-        <td><%= article.twitter_shared_count %></td>
-        <td><%= article.facebook_shared_count %></td>
+        <td><%= article.tweeted_count %></td>
         <td><%= article.shared_count %></td>
+        <td><%= article.score %></td>
         <td><%= article.category.name %></td>
         <td><%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-sm btn-default' %></td>
         <td><%= link_to 'Destroy', admin_article_path(article), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,3 +28,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @articles %>

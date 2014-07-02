@@ -55,45 +55,20 @@
       </div>
     </header>
     <div class="container">
-      <% if false %>
+      <% if !(/^admin\// =~ params[:controller]) %>
         <div class="row">
-          <nav class="navbar" role="navigation">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-                <span class="sr-only">Toggle navigation</span>
-              </button>
+          <a class="banner" href="https://www.facebook.com/patrick.ben1">
+            <div class="col-sm-2">
+              <%= image_tag 'ben.png' %>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-01">
-              <ul class="nav navbar-nav navbar-left">
-                <li>
-                  <a href="#">Category1</a>
-                </li>
-                <li>
-                  <a href="#">Category1</a>
-                </li>
-                <li>
-                  <a href="#">Category1</a>
-                </li>
-                <li>
-                  <a href="#">Category1</a>
-                </li>
-              </ul>
+            <div class="col-sm-10">
+              <p class="message">
+                kupi kupi dulu 創設者 Ben Patrickからの メッセージをお読みください
+              </p>
             </div>
-          </nav>
+          </a>
         </div>
       <% end %>
-      <div class="row">
-        <a class="banner" href="https://www.facebook.com/patrick.ben1">
-          <div class="col-sm-2">
-            <%= image_tag 'ben.png' %>
-          </div>
-          <div class="col-sm-10">
-            <p class="message">
-              kupi kupi dulu 創設者 Ben Patrickからの メッセージをお読みください
-            </p>
-          </div>
-        </a>
-      </div>
       <div class="row">
         <div class="col-sm-12 flash">
           <% flash.each do |name, msg| %>
@@ -107,28 +82,35 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-7">
-          <%= yield :breadcrumb %>
-          <%= yield %>
-        </div> <!-- col -->
-        <div class="col-sm-5">
-          <div class="ranking">
-            <h5 class="ranking-title">★ Palng fames</h5>
-            <ul class="media-list">
-              <% @popular_articles.each.with_index(1) do |article, no| %>
-                <li class="media">
-                  <%= link_to article do %>
-                    <div class="pull-left"><%= article.thumbnail_image_tag %></div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><%= "No.#{no}" %></h4>
-                      <p class="media-title"><%= article.title %></p>
-                    </div>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div><!-- col -->
+        <% if !(/^admin\// =~ params[:controller]) %>
+          <div class="col-sm-7">
+            <%= yield :breadcrumb %>
+            <%= yield %>
+          </div> <!-- col -->
+          <div class="col-sm-5">
+            <div class="ranking">
+              <h5 class="ranking-title">★ Palng fames</h5>
+              <ul class="media-list">
+                <% @popular_articles.each.with_index(1) do |article, no| %>
+                  <li class="media">
+                    <%= link_to article do %>
+                      <div class="pull-left"><%= article.thumbnail_image_tag %></div>
+                      <div class="media-body">
+                        <h4 class="media-heading"><%= "No.#{no}" %></h4>
+                        <p class="media-title"><%= article.title %></p>
+                      </div>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div><!-- col -->
+        <% else %>
+          <div class="col-sm-12">
+            <%= yield :breadcrumb %>
+            <%= yield %>
+          </div> <!-- col -->
+        <% end %>
       </div><!-- row -->
     </div><!-- container -->
 
