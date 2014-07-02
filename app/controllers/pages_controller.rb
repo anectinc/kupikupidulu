@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def main
-    @articles = Article.public
+    @articles = Article.public.page params[:page]
   end
 
   def contact

@@ -2,6 +2,8 @@
 class Article < ActiveRecord::Base
   acts_as_paranoid
 
+  paginates_per 10
+
   belongs_to :category
   has_many :media
   has_many :images
