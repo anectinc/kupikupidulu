@@ -16,6 +16,8 @@ class Article < ActiveRecord::Base
   validates_format_of :source_url, with: /\Ahttps?:\/\/.+\z/, allow_blank: true
   validate :validate_number_of_media
 
+  before_destroy :destroy_redis_record
+
   def self.public
     where displayable: true
   end
@@ -36,6 +38,12 @@ class Article < ActiveRecord::Base
   def increment_shared_count
     increment! :shared_count
     increment_score
+  end
+
+  def destroy_redis_record
+    REDIS.zrem(Date.today.prev_day.to_s, self.id)
+    REDIS.zrem(Date.today.to_s, self.id)
+    true
   end
 
   private
