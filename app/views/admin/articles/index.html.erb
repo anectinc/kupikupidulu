@@ -10,6 +10,7 @@
       <th>Shared count</th>
       <th>Score</th>
       <th>Category</th>
+      <th>Released?</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= article.shared_count %></td>
         <td><%= article.score %></td>
         <td><%= article.category.name %></td>
+        <td><%= article.displayable_status %></td>
         <td><%= link_to 'Edit', edit_admin_article_path(article), class: 'btn btn-sm btn-default' %></td>
         <td><%= link_to 'Destroy', admin_article_path(article), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
