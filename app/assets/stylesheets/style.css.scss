@@ -17,13 +17,23 @@ body {
 
 header {
   background-color: $green;
-  padding: 20px 20px 40px;
+  padding: 30px 40px 30px;
   margin-bottom: 30px;
 
-  h1 a {
-    color: #FFF;
-    &:hover {
-      color: $base-border-color;
+  @media (max-width: 768px){
+    padding: 10px 30px;
+    margin-bottom: 8px;
+  }
+
+  .logo {
+    margin: 0;
+
+    img {
+      max-width: 100%;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -106,7 +116,7 @@ blockquote {
 
 .post-time {
   color: #FFF;
-  font-size: 14px;
+  font-size: 13px;
   margin: 9px 0px 10px;
   display: inline-block;
   background-color: rgba(110, 116, 125, 0.66);
@@ -151,32 +161,38 @@ blockquote {
 }
 
 .ranking {
-  padding: 0 8px;
+  margin: 0 8px 8px;
+  padding: 0;
+  background-color: #FFF;
+  border: solid 1px $base-border-color;
+  border-radius: 2px;
 
   .ranking-title {
-    border: solid 1px $green;
-    border-radius: 2px;
-    padding: 14px;
-    color: darken($green, 10%);
-    font-weight: normal;
-    margin: 0 0 10px;
-  }
-
-  img {
-    width: 55px;
-    height: 55px;
-    margin: 4px;
-    border-radius: 2px;
+    margin: 15px 10px 10px;
   }
 
   .media {
     border: solid 1px transparent;
-    border-bottom-color: $base-border-color;
-    margin-top: 4px;
+    border-top-color: $base-border-color;
+    margin-top: 0px;
     transition: all 0.25s ease 0s;
 
-    &:hover {
+    a {
+      @extend %clearfix;
+    }
+
+    @media (max-width: 768px){
+      transition: none;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 6px 6px 5px;
       border-radius: 2px;
+    }
+
+    &:hover {
       background-color: $green;
       border-color: $green;
 
@@ -197,11 +213,9 @@ blockquote {
   }
 
   .media-title {
-    margin: 0 5px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    padding-right: 30px;
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 16px;
   }
 
   .media-body {
@@ -214,6 +228,10 @@ blockquote {
       top: 15px;
       right: 15px;
     }
+  }
+
+  .media-list {
+    margin: 0;
   }
 }
 
