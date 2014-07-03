@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="row">
-        <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions') %>
+        <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions' || params[:controller] == 'pages' || params[:controller] == 'contacts') %>
           <div class="col-sm-7" style="margin-bottom: 30px;">
             <%= yield :breadcrumb %>
             <%= yield %>

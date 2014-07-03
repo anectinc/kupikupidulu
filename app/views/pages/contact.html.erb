@@ -28,9 +28,13 @@
 
         <%= f.input :name, placeholder: 'taip nama kau di sini!', label: 'nama kau(misti mau)' %>
         <%= f.input :email, placeholder: 'taip email kau di sini!', as: :email, label: 'email kau(misti mau)' %>
+        <%= f.input :medium1, placeholder: 'taip link gambar/video kau di sini!', as: :email, label: 'tajuku gambar/video kau' %>
+        <%= f.input :medium2, placeholder: 'taip link gambar/video kau di sini!', as: :email, label: 'tajuku gambar/video kau' %>
+        <p>kalau tiada link, hantar gambar/video kau pigi contact@kupikupidulu.com</br>
+        *kami buli terima link video youtube saja ok!</p>
         <%= f.input :content, placeholder: 'taip cerita pasal gambar/video kau di sini!', as: :text, label: 'cerita pasal gambar/video kau' %>
         <div class="form-group">
-          <%= f.submit 'post preview', data: { disable_with: 'Sending...' }, class: %w(btn btn-primary btn-block) %>
+          <%= f.submit 'kirim kasi kami', data: { disable_with: 'Sending...' }, class: %w(btn btn-primary btn-block) %>
         </div>
       <% end %>
     </div>
