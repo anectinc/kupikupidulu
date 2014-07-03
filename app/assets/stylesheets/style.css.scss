@@ -144,6 +144,12 @@ blockquote {
   font-size: 16px;
 }
 
+.thumb-description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .ranking {
   padding: 0 8px;
 
