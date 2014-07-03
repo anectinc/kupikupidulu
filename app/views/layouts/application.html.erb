@@ -69,26 +69,28 @@
       </div>
       <div class="row">
         <% if !(/^admin\// =~ params[:controller] || params[:controller] == 'sessions') %>
-          <div class="col-sm-7">
+          <div class="col-sm-7" style="margin-bottom: 30px;">
             <%= yield :breadcrumb %>
             <%= yield %>
           </div> <!-- col -->
           <div class="col-sm-5">
-            <div class="ranking">
-              <h5 class="ranking-title">★ Palng fames</h5>
-              <ul class="media-list">
-                <% @popular_articles.each.with_index(1) do |article, no| %>
-                  <li class="media">
-                    <%= link_to article do %>
-                      <div class="pull-left"><%= article.thumbnail_image_tag %></div>
-                      <div class="media-body">
-                        <h4 class="media-heading"><%= "No.#{no}" %></h4>
-                        <p class="media-title"><%= article.title %></p>
-                      </div>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
+            <div class="row">
+              <div class="ranking">
+                <h5 class="ranking-title">☆ Paling fames</h5>
+                <ul class="media-list">
+                  <% @popular_articles.each.with_index(1) do |article, no| %>
+                    <li class="media">
+                      <%= link_to article do %>
+                        <div class="pull-left"><%= article.thumbnail_image_tag %></div>
+                        <div class="media-body">
+                          <h4 class="media-heading"><%= "No.#{no}" %></h4>
+                          <p class="media-title"><%= article.title %><span class="fui-arrow-right"></p>
+                        </div>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div><!-- col -->
         <% else %>
