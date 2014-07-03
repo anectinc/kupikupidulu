@@ -3,8 +3,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new contact_params
     if @contact.valid?
-      UserMailer.contact_email @contact
-      redirect_to root_url, notice: 'メッセージを送信しました'
+      UserMailer.contact_email(@contact).deliver
+      redirect_to root_url, notice: 'Success!'
     else
       render 'pages/contact'
     end
@@ -13,6 +13,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit :name, :email, :content
+    params.require(:contact).permit :name, :email, :medium1, :medium2, :content
   end
 end
