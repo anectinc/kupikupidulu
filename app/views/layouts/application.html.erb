@@ -73,7 +73,7 @@
           <div class="col-sm-5">
             <div class="row">
               <div class="ranking">
-                <h5 class="ranking-title">☆ Paling fames</h5>
+                <h5 class="ranking-title"><%= image_tag('ranking_title.png') %></h5>
                 <ul class="media-list">
                   <% @popular_articles.each.with_index(1) do |article, no| %>
                     <li class="media">
@@ -81,7 +81,7 @@
                         <div class="pull-left"><%= article.thumbnail_image_tag %></div>
                         <div class="media-body">
                           <h4 class="media-heading"><%= "No.#{no}" %></h4>
-                          <p class="media-title"><%= article.title %><span class="fui-arrow-right"></p>
+                          <p class="media-title"><%= article.title %></p>
                         </div>
                       <% end %>
                     </li>
@@ -98,7 +98,6 @@
         <% end %>
       </div><!-- row -->
     </div><!-- container -->
-
     <footer>
       <div class="container">
         <div class="row">
@@ -113,7 +112,6 @@
         </div><!-- row -->
       </div><!-- container -->
     </footer>
-
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
