@@ -153,13 +153,13 @@ blockquote {
 
 .ranking {
   margin: 0 8px 8px;
-  padding: 12px;
+  padding: 0;
   background-color: #FFF;
   border: solid 1px $base-border-color;
   border-radius: 2px;
 
   .ranking-title {
-    margin: 10px 0 15px 5px;
+    margin: 15px 10px 10px;
   }
 
   .media {
@@ -180,7 +180,6 @@ blockquote {
     }
 
     &:hover {
-      border-radius: 2px;
       background-color: $green;
       border-color: $green;
 
@@ -201,8 +200,9 @@ blockquote {
   }
 
   .media-title {
-    margin: 0 5px;
-    line-height: 1.3em;
+    margin: 7px 5px;
+    line-height: 1.4em;
+    font-size: 16px;
   }
 
   .media-body {
