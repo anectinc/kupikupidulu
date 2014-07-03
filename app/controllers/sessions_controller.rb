@@ -9,15 +9,15 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password], true)
-      redirect_to admin_url, notice: 'loginしました'
+      redirect_to admin_url, notice: 'Success!'
     else
-      flash.now[:alert] = I18n.t('helpers.notices.wrong_email_or_password')
+      flash.now[:alert] = 'Wrong email or password'
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_url, notice: 'ログアウトしました。'
+    redirect_to root_url, notice: 'Success!'
   end
 end

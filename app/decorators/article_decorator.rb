@@ -33,4 +33,14 @@ module ArticleDecorator
   def source
     link_to source_name, source_url
   end
+
+  def displayable_status
+    content_tag :span, class: displayable_label do
+      displayable ? 'Released' : 'Unreleased'
+    end
+  end
+
+  def displayable_label
+    ['label'] << (displayable ? 'label-success' : 'label-default')
+  end
 end
