@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_popular_articles
-    @popular_articles = Article.by_popularity.includes(:media)
+    @popular_articles = Article.by_popularity #.includes(:media)
   end
 end
