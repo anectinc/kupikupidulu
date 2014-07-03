@@ -116,7 +116,7 @@ blockquote {
 
 .post-time {
   color: #FFF;
-  font-size: 14px;
+  font-size: 13px;
   margin: 9px 0px 10px;
   display: inline-block;
   background-color: rgba(110, 116, 125, 0.66);
@@ -176,6 +176,10 @@ blockquote {
     border-top-color: $base-border-color;
     margin-top: 0px;
     transition: all 0.25s ease 0s;
+
+    a {
+      @extend %clearfix;
+    }
 
     @media (max-width: 768px){
       transition: none;
