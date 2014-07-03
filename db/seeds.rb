@@ -27,3 +27,7 @@ if Rails.env.development? || Rails.env.staging?
     article.save
   end
 end
+
+if Rails.env.production?
+  User.create name: 'admin', email: 'webmaster@kupikupidulu.com', password: 'Kupi2dulu', password_confirmation: 'Kupi2dulu' if User.find_by(email: 'webmaster@kupikupidulu.com').blank?
+end
