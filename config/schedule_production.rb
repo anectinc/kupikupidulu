@@ -1,3 +1,4 @@
+env :PATH, ENV['PATH']
 set :job_template, "zsh -l -c ':job'"
 set :output, 'log/crontab.log'
 set :environment, :production
