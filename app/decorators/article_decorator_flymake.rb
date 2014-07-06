@@ -3,7 +3,7 @@ module ArticleDecorator
   def thumbnail_tag height = 315, width = 560
     if thumbnail_medium.image?
       link_to self do
-        content_tag :div, class: 'thumb_image', style: "background-image: url(#{thumbnail_medium.file.url || asset_path('no_image.jpg')})" do
+        content_tag :div, class: 'thumb_image', style: "background-image: url(#{thumbnail_medium.file.url || asset'no_image.jpg'})" do
         end
       end
     elsif thumbnail_medium.video?
