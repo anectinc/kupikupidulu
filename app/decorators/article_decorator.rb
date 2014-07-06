@@ -29,7 +29,7 @@ module ArticleDecorator
     if thumbnail_medium.image?
       thumbnail_medium.file.thumb.url || 'no_image.jpg'
     elsif thumbnail_medium.video?
-      "http://img.youtube.com/vi/#{thumbnail_medium.video_code}/1.jpg"
+      "http://img.youtube.com/vi/#{thumbnail_medium.video_code}/0.jpg"
     end
   end
 
