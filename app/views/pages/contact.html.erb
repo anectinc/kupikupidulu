@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Contact | <%= t 'servicename' %>
+  Kontek | kupi kupi dulu
 <% end %>
 
 <% content_for :breadcrumb do %>
@@ -11,7 +11,7 @@
         <% end %>
       </li>
       <li class="active">
-        Contact
+        Kontek
       </li>
     </ul>
   </div>
@@ -20,7 +20,7 @@
 <div class="row">
   <div class="contact">
     <div class="page-header">
-      <h1>Contact</h1>
+      <h1>Kontek</h1>
     </div>
     <div class="col-sm-12">
       <%= simple_form_for @contact, html: { class: 'form-horizontal' } do |f| %>
@@ -28,9 +28,10 @@
 
         <%= f.input :name, placeholder: 'taip nama kau di sini!', label: 'nama kau(misti mau)' %>
         <%= f.input :email, placeholder: 'taip email kau di sini!', as: :email, label: 'email kau(misti mau)' %>
-        <%= f.input :medium, placeholder: 'taip link gambar/video kau di sini!', as: :email, label: 'tajuku gambar/video kau' %>
-        <p>kalau tiada link, hantar gambar/video kau pigi contact@kupikupidulu.com</br>
-        *kami buli terima link video youtube saja ok!</p>
+        <%= f.input :medium, placeholder: 'taip link gambar/video kau di sini!', as: :email, label: 'tajuk gambar/video kau' %>
+        <p>kalau tiada link, hantar gambar/video kau pigi contact@kupikupidulu.com<br/>
+        <small>*kami buli terima link video youtube saja ok!</small>
+        </p>
         <%= f.input :content, placeholder: 'taip cerita pasal gambar/video kau di sini!', as: :text, label: 'cerita pasal gambar/video kau' %>
         <div class="form-group">
           <%= f.submit 'kirim kasi kami', data: { disable_with: 'Sending...' }, class: %w(btn btn-primary btn-block) %>
