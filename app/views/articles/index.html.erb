@@ -3,7 +3,9 @@
     <div class="one-post">
       <h2 class="title"><%= link_to article.title, article %></h2>
       <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
-      <div class="post-image"><%= article.thumbnail_tag %></div>
+      <div class="post-image">
+        <%= link_to article.thumbnail_tag, article %>
+      </div>
       <p class="post-description thumb-description">
         <%= article.description %>
       </p>
