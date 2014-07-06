@@ -36,7 +36,7 @@
 <% end %>
 
 <% content_for :og_image do %>
-  <meta property="og:image" content="<%= asset_url @article.thumbnail_image_path %>">
+  <meta property="og:image" content="<%= @article.thumbnail_image_url %>">
 <% end %>
 
 <%= render partial: 'shared/article', locals: { article: @article } %>

@@ -25,6 +25,14 @@ module ArticleDecorator
     end
   end
 
+  def thumbnail_image_url
+    if thumbnail_medium.image?
+      asset_url(thumbnail_medium.file.url || 'no_image.jpg')
+    elsif thumbnail_medium.video?
+      "http://img.youtube.com/vi/#{thumbnail_medium.video_code}/0.jpg"
+    end
+  end
+
   def thumbnail_thumb_image_path
     if thumbnail_medium.image?
       thumbnail_medium.file.thumb.url || 'no_image.jpg'
