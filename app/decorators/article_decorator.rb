@@ -2,7 +2,10 @@
 module ArticleDecorator
   def thumbnail_tag height = 315, width = 560
     if thumbnail_medium.image?
-      image_tag(thumbnail_medium.file.url || 'no_image.jpg')
+      link_to self do
+        content_tag :div, class: 'thumb_image', style: "background-image: url(#{thumbnail_medium.file.url || asset_path('no_image.jpg')})" do
+        end
+      end
     elsif thumbnail_medium.video?
       content_tag :div, class: ['embed-responsive', 'embed-responsive-16by9'] do
         content_tag :iframe, nil, src: "http://www.youtube.com/embed/#{thumbnail_medium.video_code}", class: 'embed-responsive-item'
