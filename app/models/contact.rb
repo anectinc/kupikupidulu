@@ -4,8 +4,7 @@ class Contact
 
   attribute :name
   attribute :email
-  attribute :medium1
-  attribute :medium2
+  attribute :medium
   attribute :content
 
   validates_presence_of :name, :email, :content
