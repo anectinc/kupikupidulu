@@ -245,6 +245,38 @@ blockquote {
   }
 }
 
+.relative-title {
+  font-size: 28px;
+  padding: 0 8px;
+  margin-bottom: 4px;
+}
+
+.relative-post {
+  width: 50%;
+  float: left;
+  padding: 8px;
+
+  .inner {
+    padding: 8px;
+    background-color: #FFF;
+    border: solid 1px $base-border-color;
+    border-radius: 2px;
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 2px;
+    }
+
+    .relative-post-description {
+      margin: 6px 0 0;
+    }
+  }
+}
+
 .tw-btn {
   display: block;
   background-color: $tw-color;
