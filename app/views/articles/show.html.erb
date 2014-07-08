@@ -40,3 +40,23 @@
 <% end %>
 
 <%= render partial: 'shared/article', locals: { article: @article } %>
+
+<div class="row">
+  <h2 class="relative-title">関連記事</h2>
+  <% @related_articles.in_groups_of(2) do |articles| %>
+    <div class="col-sm-6">
+      <div class="row">
+        <% articles.each do |article| %>
+          <article class="relative-post">
+            <%= link_to article do %>
+              <div class="inner">
+                <%= article.thumbnail_image_tag %>
+                <div class="relative-post-description"><%= article.description %></div>
+              </div>
+            <% end %>
+          </article>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

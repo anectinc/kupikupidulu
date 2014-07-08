@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @related_articles = @article.category.articles.limit(4).includes(:media)
   end
 
   def tweet
