@@ -13,6 +13,7 @@
     <%- if (medium && medium.video?) || medium.new_record? -%>
       <%= f.input :video_code, label: 'Video', placeholder: 'paste youtube video code here!', wrapper_html: { class: 'video_code' } %>
     <%- end -%>
+    <%= f.input :description %>
   </div>
   <div class="col-md-2">
     <%= f.link_to_remove 'Delete', class: 'btn btn-sm btn-danger' %>
