@@ -266,8 +266,11 @@ blockquote {
       display: block;
     }
 
-    img {
-      width: 100%;
+    .thumb_image {
+      height: 120px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
       border-radius: 2px;
     }
 
