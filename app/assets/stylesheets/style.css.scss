@@ -164,6 +164,11 @@ blockquote {
   font-size: 17px;
 }
 
+.post-sub-description {
+  font-size: 17px;
+  margin: 10px 4px 40px;
+}
+
 .thumb-description {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -171,11 +176,15 @@ blockquote {
 }
 
 .ranking {
-  margin: 0 8px 8px;
+  margin: 0 8px 8px 30px;
   padding: 0;
   background-color: #FFF;
   border: solid 1px $base-border-color;
   border-radius: 2px;
+
+  @media (max-width: 768px){
+    margin-left: 8px;
+  }
 
   .ranking-title {
     margin: 15px 10px 10px;
@@ -203,16 +212,8 @@ blockquote {
     }
 
     &:hover {
-      background-color: $green;
-      border-color: $green;
-
-      .media-heading {
-        color: darken($green, 20%);
-      }
-
-      .media-title {
-        color: #FFF;
-      }
+      background-color: #EEE;
+      border-color: darken(#EEE, 5%);
     }
   }
 
@@ -261,9 +262,16 @@ blockquote {
     background-color: #FFF;
     border: solid 1px $base-border-color;
     border-radius: 2px;
+    transition: all 0.25s ease 0s;
 
-    a {
-      display: block;
+    @media (max-width: 768px){
+      transition: none;
+    }
+
+    &:hover {
+      background-color: #EEE;
+      border-color: darken(#EEE, 5%);
+      color: #FFF;
     }
 
     .thumb_image {
@@ -274,8 +282,10 @@ blockquote {
       border-radius: 2px;
     }
 
-    .relative-post-description {
+    .relative-post-title {
       margin: 6px 0 0;
+      font-size: 17px;
+      color: $main-font;
     }
   }
 }

@@ -42,16 +42,16 @@
 <%= render partial: 'shared/article', locals: { article: @article } %>
 
 <div class="row">
-  <h2 class="relative-title">関連記事</h2>
+  <h2 class="relative-title">cerita berkaitan</h2>
   <% @related_articles.in_groups_of(2) do |articles| %>
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="row">
         <% articles.each do |article| %>
           <article class="relative-post">
             <%= link_to article do %>
               <div class="inner">
                 <%= article.relative_thumbnail_tag %>
-                <div class="relative-post-description"><%= article.description %></div>
+                <div class="relative-post-title"><%= article.title %></div>
               </div>
             <% end %>
           </article>
