@@ -9,7 +9,7 @@
       <% article.media.each do |medium| %>
         <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
         <% if medium.description.present? %>
-          <p>
+          <p class="post-sub-description">
             <%= medium.description %>
           </p>
         <% end %>
