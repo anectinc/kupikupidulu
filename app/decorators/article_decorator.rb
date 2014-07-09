@@ -13,6 +13,11 @@ module ArticleDecorator
     end
   end
 
+  def relative_thumbnail_tag
+    content_tag :div, class: 'thumb_image', style: "background-image: url(#{thumbnail_image_path})" do
+    end
+  end
+
   def thumbnail_image_tag
     image_tag(thumbnail_image_path, widht: 64, height: 64, class: 'media-object')
   end
