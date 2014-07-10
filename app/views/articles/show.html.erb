@@ -23,11 +23,11 @@
 
 <% if @article.description.present? %>
   <% content_for :og_description do %>
-    <meta property="og:description" content="<%= "【#{t('service_name')}】#{@article.description}" %>">
+    <meta property="og:description" content="<%= @article.description %>">
   <% end %>
 
   <% content_for :meta_description do %>
-    <%= "【#{t('service_name')}】#{@article.description}" %>
+    <%= @article.description %>
   <% end %>
 <% end %>
 

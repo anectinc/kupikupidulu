@@ -3,7 +3,7 @@
     <h1 class="title"><%= article.title %></h1>
     <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
     <p class="post-description">
-      <%= article.description %>
+      <%= article.before_description %>
     </p>
     <div class="source">
       <% article.media.each do |medium| %>
@@ -15,6 +15,9 @@
         <% end %>
       <% end %>
     </div>
+    <p class="post-description">
+      <%= article.after_description %>
+    </p>
     <% if article.source? %>
     <blockquote>
       source: <%= article.source %>
