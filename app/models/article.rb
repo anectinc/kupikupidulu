@@ -23,8 +23,8 @@ class Article < ActiveRecord::Base
   end
 
   def self.by_popularity
-    ranking = self.where(id: REDIS.zrevrange(Date.today.prev_day.to_s, 0, 9)).includes(:media)
-    ranking + (ranking.length < 10 ? self.limit(10 - ranking.length).includes(:media) : [])
+    ranking = self.public.where(id: REDIS.zrevrange(Date.today.prev_day.to_s, 0, 9)).includes(:media)
+    ranking + (ranking.length < 10 ? self.public.limit(10 - ranking.length).includes(:media) : [])
   end
 
   def source?
