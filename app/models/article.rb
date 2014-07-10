@@ -31,6 +31,10 @@ class Article < ActiveRecord::Base
     source_name.present? && source_url.present?
   end
 
+  def description
+    before_description.presence || after_description
+  end
+
   def increment_tweeted_count
     increment! :tweeted_count
     increment_score

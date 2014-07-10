@@ -3,13 +3,14 @@
 
   <div class="form-group">
     <%= f.input :title, label: 'Post title', placeholder: 'Add title here!' %>
+    <%= f.input :before_description, label: 'Post description', placeholder: 'Add description before media here!' %>
 
     <div id="media">
       <%= f.simple_fields_for :media %>
     </div>
     <%= f.link_to_add 'Add Image', :media, data: { target: "#media", :'predefined-type' => 'Image' }, class: 'btn btn-default' %>
     <%= f.link_to_add 'Add Video', :media, data: { target: "#media", :'predefined-type' => 'Video' }, class: 'btn btn-default' %>
-    <%= f.input :description, label: 'Post description', placeholder: 'Add description here!' %>
+    <%= f.input :after_description, label: 'Post description', placeholder: 'Add description after media here!' %>
     <%= f.label :source_name, 'Post Source' %>
     <div class="row">
       <%= f.input :source_name, label: false, placeholder: 'Add source name here!', wrapper_html: { class: 'col-md-6' } %>
