@@ -33,7 +33,11 @@ class FileUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
-  process resize_to_fit: [500, 500]
+  process :fix_resize_issue_with_gif
+
+  def fix_resize_issue_with_gif
+    resize_to_fit 500, 500 if file.extension.downcase != 'gif'
+  end
   #
   # def scale(width, height)
   #   # do something
@@ -42,7 +46,11 @@ class FileUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
   #   process :scale => [50, 50]
-    process resize_to_fill: [200, 200]
+    process :fix_resize_issue_with_thumb_gif
+  end
+
+  def fix_resize_issue_with_thumb_gif
+    resize_to_fill 200, 200 if file.extension.downcase != 'gif'
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
