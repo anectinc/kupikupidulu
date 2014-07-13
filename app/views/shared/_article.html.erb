@@ -3,20 +3,20 @@
     <h1 class="title"><%= article.title %></h1>
     <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
     <p class="post-description">
-      <%= article.before_description %>
+      <%= show_text article.before_description %>
     </p>
     <div class="source">
       <% article.media.each do |medium| %>
         <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
         <% if medium.description.present? %>
           <p class="post-sub-description">
-            <%= medium.description %>
+            <%= show_text medium.description %>
           </p>
         <% end %>
       <% end %>
     </div>
     <p class="post-description">
-      <%= article.after_description %>
+      <%= show_text article.after_description %>
     </p>
     <% if article.source? %>
     <blockquote>
