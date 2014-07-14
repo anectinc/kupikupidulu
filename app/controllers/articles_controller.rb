@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @related_articles = @article.category.articles.where.not(id: @article).limit(4).includes(:media)
+    @related_articles = @article.category.articles.public.where.not(id: @article).limit(4).includes(:media)
   end
 
   def tweet
