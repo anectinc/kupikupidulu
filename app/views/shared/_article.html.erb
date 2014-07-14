@@ -7,12 +7,12 @@
     </p>
     <div class="source">
       <% article.media.each do |medium| %>
-        <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
         <% if medium.description.present? %>
           <p class="post-sub-description">
             <%= show_text medium.description %>
           </p>
         <% end %>
+        <%= render partial: 'shared/medium_tag', locals: { medium: medium } %>
       <% end %>
     </div>
     <p class="post-description">
