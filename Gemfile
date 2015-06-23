@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
+gem 'libv8', '3.16.14.7' if RUBY_PLATFORM =~ /darwin/
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -54,6 +55,12 @@ gem 'nested_form'
 gem 'redis'
 gem 'sitemap_generator'
 gem 'whenever', require: false
+gem 'eventmachine', github: 'eventmachine/eventmachine', branch: :master
+
+gem 'capistrano', '~> 3.3.0'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano3-unicorn'
 
 group :development do
   gem "thin"
