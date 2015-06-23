@@ -1,0 +1,39 @@
+box: wercker/rvm
+services:
+  - wercker/mysql
+  - wercker/redis
+build:
+  steps:
+    - rvm-use:
+        version: 2.2.2
+    - bundle-install
+    - rails-database-yml:
+        service: mysql
+    - script:
+        name: echo ruby information
+        code: |
+          echo "ruby version $(ruby --version) running!"
+          echo "from location $(which ruby)"
+          echo -p "gem list: $(gem list)"
+    - script:
+        name: setup config files
+        code: |
+          cp config/secrets.yml.sample config/secrets.yml
+    - script:
+        name: setup DB
+        code: RAILS_ENV=test bundle exec rake db:migrate
+    - script:
+        name: run RSpec
+        code: bundle exec rspec
+deploy:
+  steps:
+    - add-ssh-key:
+        keyname: WERCKER_SSH_KEY
+    - bundle-install
+    - cap:
+        stage: $DEPLOY_STAGE
+  after-steps:
+    - sherzberg/slack-notify:
+        subdomain: anect
+        token: $SLACK_TOKEN
+        channel: '#general'
