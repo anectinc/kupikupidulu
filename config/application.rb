@@ -17,8 +17,24 @@ module Kupikupidulu
     config.time_zone = 'Kuala Lumpur'
     config.active_record.default_timezone = :local
 
+    config.generators do |g|
+      g.orm :active_record
+      g.test_framework :rspec, fixture: true, fixture_replacement: :factory_girl
+      g.view_specs false
+      g.controller_specs true
+      g.routing_specs false
+      g.helper_specs false
+      g.request_specs false
+      g.assets false
+      g.helper false
+    end
+
+    config.autoload_paths += %W(#{config.root}/lib)
+
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
+
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
