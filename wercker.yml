@@ -1,7 +1,7 @@
-box: rvm
+box: wercker/rvm
 services:
-  - mysql
-  - redis
+  - wercker/mysql
+  - wercker/redis
 build:
   steps:
     - rvm-use:
