@@ -6,18 +6,19 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.increment_accesees_count
     @related_articles = @article.category.articles.public.where.not(id: @article).limit(4).includes(:media)
   end
 
   def tweet
     @article.increment_tweeted_count
-    zincrement
+    @article.increment_accesees_count
     redirect_to @article
   end
 
   def share
     @article.increment_shared_count
-    zincrement
+    @article.increment_accesees_count
     redirect_to @article
   end
 
@@ -25,9 +26,5 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.public.find(params[:id])
-  end
-
-  def zincrement
-    Redis::Namespace.new('ArticlesCount', redis: Redis.current).zincrby(Date.today.to_s, 1, @article.id)
   end
 end

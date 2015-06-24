@@ -23,12 +23,13 @@ class Article < ActiveRecord::Base
   end
 
   def self.redis
-    Redis::Namespace.new('ArticlesCount', redis: Redis.current)
+    Redis::Namespace.new('ArticlesRanking', redis: Redis.current)
   end
 
   def self.by_popularity
-    ranking = self.public.where(id: redis.zrevrange(Date.today.prev_day.to_s, 0, 9)).includes(:media)
-    ranking + (ranking.length < 10 ? self.public.limit(10 - ranking.length).includes(:media) : [])
+    ranking_ids = redis.zrevrange(Date.today.prev_day.to_s, 0, 9).map(&:to_i)
+    ranking_ids += self.public.limit(10 - ranking_ids.length).pluck(:id) if ranking_ids.length < 10
+    self.public.where(id: ranking_ids).reorder("FIELD(id, #{ranking_ids.map(&:to_i).join ','})")
   end
 
   def redis
@@ -41,6 +42,10 @@ class Article < ActiveRecord::Base
 
   def description
     before_description.presence || after_description
+  end
+
+  def increment_accesees_count
+    redis.zincrby(Date.today.to_s, 1, id)
   end
 
   def increment_tweeted_count
