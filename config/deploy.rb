@@ -4,7 +4,7 @@ lock '3.3.5'
 Rake::Task['metrics:collect'].clear_actions
 
 set :application, 'kupikupidulu'
-set :repo_url, "git@github.com:kagweb/#{fetch(:application)}.git"
+set :repo_url, "git@github.com:anectinc/#{fetch(:application)}.git"
 
 # Default branch is :master
 set :branch, :master
