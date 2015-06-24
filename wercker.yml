@@ -1,11 +1,9 @@
-box: wercker/rvm
+box: wercker/ruby
 services:
   - wercker/mysql
   - wercker/redis
 build:
   steps:
-    - rvm-use:
-        version: 2.2.2
     - bundle-install
     - rails-database-yml:
         service: mysql
