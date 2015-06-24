@@ -1,7 +1,9 @@
 <div class="row">
   <article class="one-post">
     <h1 class="title"><%= article.title %></h1>
-    <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
+    <% if false %>
+      <span class="post-time"><span class="fui-time"></span><%= article.created_at %></span>
+    <% end %>
     <p class="post-description">
       <%= show_text article.before_description %>
     </p>
