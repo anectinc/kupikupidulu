@@ -2,8 +2,8 @@
 worker_processes 8 # ワーカープロセス数
 working_directory "/usr/local/services/kupikupidulu/current"
 
-listen "/usr/local/services/kupikupidulu/shared/pids/unicorn.sock"
-pid "/usr/local/services/kupikupidulu/shared/pids/unicorn.pid"
+listen "/usr/local/services/kupikupidulu/shared/tmp/pids/unicorn.sock"
+pid "/usr/local/services/kupikupidulu/shared/tmp/pids/unicorn.pid"
 
 stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
