@@ -27,6 +27,7 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'sitemap_generator'
 gem 'whenever', require: false
+gem 'ebisu_connection'
 
 gem 'unicorn'
 gem 'capistrano', '~> 3.3.0'

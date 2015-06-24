@@ -11,7 +11,7 @@ stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
 preload_app true
 
 before_fork do |server, worker|
-  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.clear_all_slave_connections!
 
   old_pid = "#{ server.config[:pid] }.oldbin"
   unless old_pid == server.pid
@@ -23,5 +23,5 @@ before_fork do |server, worker|
 end
 
 after_fork do |server, worker|
-  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_fresh_connection
 end
