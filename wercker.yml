@@ -19,12 +19,6 @@ build:
         name: setup config files
         code: |
           cp config/secrets.yml.sample config/secrets.yml
-    - script:
-        name: setup DB
-        code: RAILS_ENV=test bundle exec rake db:migrate
-    - script:
-        name: run RSpec
-        code: bundle exec rspec
 deploy:
   steps:
     - add-ssh-key:
