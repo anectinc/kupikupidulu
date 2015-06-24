@@ -28,6 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def zincrement
-    REDIS.zincrby(Date.today.to_s, 1, @article.id)
+    Redis::Namespace.new('ArticlesCount', redis: Redis.current).zincrby(Date.today.to_s, 1, @article.id)
   end
 end

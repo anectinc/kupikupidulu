@@ -22,9 +22,17 @@ class Article < ActiveRecord::Base
     where displayable: true
   end
 
+  def self.redis
+    Redis::Namespace.new('ArticlesCount', redis: Redis.current)
+  end
+
   def self.by_popularity
-    ranking = self.public.where(id: REDIS.zrevrange(Date.today.prev_day.to_s, 0, 9)).includes(:media)
+    ranking = self.public.where(id: redis.zrevrange(Date.today.prev_day.to_s, 0, 9)).includes(:media)
     ranking + (ranking.length < 10 ? self.public.limit(10 - ranking.length).includes(:media) : [])
+  end
+
+  def redis
+    self.class.redis
   end
 
   def source?
@@ -46,8 +54,8 @@ class Article < ActiveRecord::Base
   end
 
   def destroy_redis_record
-    REDIS.zrem(Date.today.prev_day.to_s, self.id)
-    REDIS.zrem(Date.today.to_s, self.id)
+    redis.zrem(Date.today.prev_day.to_s, self.id)
+    redis.zrem(Date.today.to_s, self.id)
     true
   end
 
