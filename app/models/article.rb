@@ -29,7 +29,7 @@ class Article < ActiveRecord::Base
   def self.by_popularity
     ranking_ids = redis.zrevrange(Date.today.prev_day.to_s, 0, 9).map(&:to_i)
     ranking_ids += self.public.limit(10 - ranking_ids.length).pluck(:id) if ranking_ids.length < 10
-    self.public.where(id: ranking_ids).reorder("FIELD(id, #{ranking_ids.map(&:to_i).join ','})")
+    ranking_ids.blank? ? [] : self.public.where(id: ranking_ids).reorder("FIELD(id, #{ranking_ids.map(&:to_i).join ','})")
   end
 
   def redis
