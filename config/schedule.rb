@@ -1,8 +1,7 @@
 rails_env = ENV['RAILS_ENV'] || :development
-path = ENV['PWD'] || :path
 
-env :PATH, path
-set :path, path
+env :PATH, ENV['PATH']
+set :path, ENV['PWD']
 set :environment, rails_env
 set :output, { error: 'log/crontab_error.log', standard: 'log/crontab.log' }
 set :job_template, "/bin/zsh -l -c ':job'"
